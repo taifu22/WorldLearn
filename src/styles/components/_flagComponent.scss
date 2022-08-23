@@ -1,0 +1,27 @@
+.div-flag-component {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 80px;
+    .div-flag-container {
+        padding: 10px;
+        padding-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: $color-font;
+        opacity: .9;
+        color: white;
+        height: 50px;
+        width: auto;
+        border-radius: 10px; 
+        img {
+            margin-left: 10px
+        }
+    }
+    i {
+        color: $color-font;
+        opacity: .8;
+        margin: -10px;
+        font-size: 25px;
+    }
+}

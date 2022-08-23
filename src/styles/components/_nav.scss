@@ -1,0 +1,21 @@
+.ul-nav {
+    display: flex;
+    margin-top: 5px;
+    margin-right: 50px;
+    li {
+        margin-right: 20px;
+        list-style: none;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        margin-left: 20px;
+    }
+}
+
+
+@media screen and (max-width: 375px){
+    li{
+       font-size: 12px;
+       margin: 5px;
+       text-transform: uppercase;
+    }
+}

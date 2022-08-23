@@ -1,0 +1,17 @@
+@import './settings';
+@import './components/header';
+@import './components/footer';
+@import './components/nav';
+@import './pages/about';
+@import './pages/erreur404';
+@import './pages/home';
+@import './pages/quiz';
+@import './components/worldmap';
+@import './pages/pageworldmap';
+@import './components/modalInfo';
+@import './components/flagComponent';
+@import './components/dropdown';
+@import './pages/listofstates';
+body{
+    background-color: rgb(207, 221, 248) ;
+}

@@ -1,0 +1,30 @@
+.page-worldmap {
+   height: 500px;
+   .world-map{
+      display: flex;
+      justify-content: center;
+      height: 500px;
+      overflow: hidden;
+      svg{
+         height: 600px;
+         width: 100%;
+         g{
+            
+         }
+      }
+   }
+   img {
+      height: 40px;
+      width: auto;
+      border: solid black 1px;
+  }
+}
+
+path{ 
+   :focus{
+    outline: 0px !important;  
+    outline-style: none;
+    outline-width: 0;
+    outline-color: green;
+   } 
+}

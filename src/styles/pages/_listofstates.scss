@@ -1,0 +1,45 @@
+.div-listofpays {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin: 20px;
+    height: 480px;
+    width: auto;
+    .div-world {
+        display: flex;
+        position: relative;
+        .p-world {
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            i {
+                margin-left: 20px;
+                font-size: 100px;
+            }
+        }
+    }
+    .div-continents {
+        .continents {
+            display: flex;
+            justify-content: space-between;
+            img {
+                height: 200px;
+                width: auto;
+            }
+        }
+        .list-dropdown {
+            display: flex;
+            justify-content: space-between;
+        }
+        .p-continent {
+            display: flex;
+            align-items: center;
+            margin-top: 60px;
+            i {
+                margin-left: 20px;
+                font-size: 100px;
+            }
+        }
+    }
+}
