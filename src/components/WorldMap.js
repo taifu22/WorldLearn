@@ -87,7 +87,7 @@ const WorldMap = () => {
         </ZoomableGroup>
       </ComposableMap>
       {isInfoShowed && dataPays && dataPaysinfo && dataPaysinfo1 && 
-      <ModaleInfo id={dataPays.id} title={dataPays.properties.name} languages={dataPaysinfo1.languages} hide={toggleInfo}/>}
+      <ModaleInfo id={dataPays.id} title={dataPays.properties.name} languages={dataPaysinfo1.languages} hide={toggleInfo} show={isInfoShowed}/>}
     </div>
   );
 };

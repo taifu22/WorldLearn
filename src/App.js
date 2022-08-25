@@ -8,6 +8,8 @@ import Erreur_404 from './pages/Erreur_404';
 import Quiz from './pages/Quiz';
 import Listofstates from './pages/Listofstates';
 import Pageworldmap from './pages/Pageworldmap';
+import QuizCapitales from './pages/QuizCapitales';
+import QuizDrapeaux from './pages/QuizDrapeaux';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
               <Route path='/' exact element={<Home />}/>
               <Route path='about' exact element={<About />}/>
               <Route path='quiz' exact element={<Quiz />}/>
+              <Route path='quizcapitales' exact element={<QuizCapitales />}/>
+              <Route path='quizdrapeaux' exact element={<QuizDrapeaux />}/>
               <Route path='pageworldmap' exact element={<Pageworldmap />}/>
               <Route path='listofstates' exact element={<Listofstates />}/>
               <Route path='*' element={<Erreur_404 />}/>

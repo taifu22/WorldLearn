@@ -7,6 +7,7 @@
     .div-world {
         display: flex;
         position: relative;
+        animation: myAnim 1s ease 0s 1 normal forwards;
         .p-world {
             position: absolute;
             bottom: -20px;
@@ -20,6 +21,7 @@
         }
     }
     .div-continents {
+        animation: myAnim1 1s ease 0s 1 normal forwards;
         .continents {
             display: flex;
             justify-content: space-between;

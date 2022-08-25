@@ -1,0 +1,27 @@
+.div-quizCapitales {
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img {
+        width: 100px;
+    }
+    .header-quiz {
+        display: flex;
+        justify-content: space-between;
+    }
+    .quiz-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .responses {
+        .group-responses {
+            display: flex;
+            justify-content: space-between;
+            margin:50px;
+            margin-bottom: 0;
+        }
+    }
+}

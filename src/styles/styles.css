@@ -1,3 +1,8 @@
+body {
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+
 @-webkit-keyframes rotation1 {
   from {
     transform: rotate(-180deg);
@@ -6,6 +11,7 @@
     transform: rotate(0deg);
   }
 }
+
 @keyframes rotation1 {
   from {
     transform: rotate(-180deg);
@@ -28,6 +34,106 @@
   }
   to {
     transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes myAnimHome {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes myAnimHome {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes myAnimHome1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes myAnimHome1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: rotateY(-70deg);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+    transform-origin: right;
+  }
+}
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: rotateY(-70deg);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+    transform-origin: right;
+  }
+}
+@-webkit-keyframes myAnim1 {
+  0% {
+    opacity: 0;
+    transform: rotateY(-70deg);
+    transform-origin: left;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+    transform-origin: left;
+  }
+}
+@keyframes myAnim1 {
+  0% {
+    opacity: 0;
+    transform: rotateY(-70deg);
+    transform-origin: left;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+    transform-origin: left;
+  }
+}
+@-webkit-keyframes myAnimQuiz {
+  0% {
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes myAnimQuiz {
+  0% {
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 .div-header {
@@ -80,6 +186,8 @@
   position: relative;
   height: 500px;
   font-family: "Montserrat";
+  -webkit-animation: myAnimHome 1s ease 0s 1 normal forwards;
+          animation: myAnimHome 1s ease 0s 1 normal forwards;
 }
 .div-about .container-text {
   z-index: auto;
@@ -157,6 +265,8 @@
   }
 }
 .div-home {
+  -webkit-animation: myAnimHome 1s ease 0s 1 normal forwards;
+          animation: myAnimHome 1s ease 0s 1 normal forwards;
   display: flex;
   flex-direction: column;
   height: 520px;
@@ -196,6 +306,51 @@
   margin-top: 40px;
 }
 
+.div-quiz-container {
+  -webkit-animation: myAnimQuiz 1s ease 0s 1 normal forwards;
+          animation: myAnimQuiz 1s ease 0s 1 normal forwards;
+  color: #132344;
+  text-align: center;
+  height: 490px;
+}
+.div-quiz-container .div-quiz {
+  display: flex;
+}
+.div-quiz-container .div-quiz img {
+  width: 300px;
+  height: 198px;
+}
+.div-quiz-container .div-quiz button {
+  background-color: #132344;
+  color: white;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 40px;
+}
+.div-quiz-container .div-quiz h1 {
+  text-align: center;
+}
+.div-quiz-container .div-quiz .quiz-capitales {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  text-align: center;
+}
+.div-quiz-container .div-quiz .quiz-drapeaux {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+}
+
 .window-info {
   height: 10px;
   width: auto;
@@ -204,6 +359,8 @@
 
 .page-worldmap {
   height: 500px;
+  -webkit-animation: myAnim1 1.5s ease 0s 1 normal forwards;
+          animation: myAnim1 1.5s ease 0s 1 normal forwards;
 }
 .page-worldmap .world-map {
   display: flex;
@@ -236,6 +393,20 @@ path :focus {
   height: 100vh;
   z-index: 1040;
   background-color: rgba(0, 0, 0, 0.5);
+  -webkit-animation: myAnimHome 1s ease 0s 1 normal forwards;
+          animation: myAnimHome 1s ease 0s 1 normal forwards;
+}
+
+.modal-overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1040;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-animation: myAnimHome1 1s ease 0s 1 normal forwards;
+          animation: myAnimHome1 1s ease 0s 1 normal forwards;
 }
 
 .modal-wrapper {
@@ -282,6 +453,8 @@ path :focus {
 }
 
 .div-flag-component {
+  font-family: "Montserrat";
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -383,6 +556,8 @@ path :focus {
 .div-listofpays .div-world {
   display: flex;
   position: relative;
+  -webkit-animation: myAnim 1s ease 0s 1 normal forwards;
+          animation: myAnim 1s ease 0s 1 normal forwards;
 }
 .div-listofpays .div-world .p-world {
   position: absolute;
@@ -394,6 +569,10 @@ path :focus {
 .div-listofpays .div-world .p-world i {
   margin-left: 20px;
   font-size: 100px;
+}
+.div-listofpays .div-continents {
+  -webkit-animation: myAnim1 1s ease 0s 1 normal forwards;
+          animation: myAnim1 1s ease 0s 1 normal forwards;
 }
 .div-listofpays .div-continents .continents {
   display: flex;
@@ -415,6 +594,32 @@ path :focus {
 .div-listofpays .div-continents .p-continent i {
   margin-left: 20px;
   font-size: 100px;
+}
+
+.div-quizCapitales {
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.div-quizCapitales img {
+  width: 100px;
+}
+.div-quizCapitales .header-quiz {
+  display: flex;
+  justify-content: space-between;
+}
+.div-quizCapitales .quiz-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.div-quizCapitales .responses .group-responses {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+  margin-bottom: 0;
 }
 
 body {

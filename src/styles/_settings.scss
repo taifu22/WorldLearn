@@ -1,6 +1,11 @@
 $font: 'Montserrat';
 $color-font:#132344;
 $background: #FFA808;
+ 
+body {
+	font-family: 'Montserrat';
+    font-weight: bold;
+}
 
 @keyframes rotation1 {
     from {
@@ -10,7 +15,6 @@ $background: #FFA808;
         transform: rotate(0deg);
     }
 }
-
 @keyframes rotation2 {
     from {
         transform: rotate(180deg);
@@ -18,4 +22,62 @@ $background: #FFA808;
     to {
         transform: rotate(0deg);
     }
+}
+
+@keyframes myAnimHome {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes myAnimHome1 {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: rotateY(-70deg);
+		transform-origin: right;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateY(0);
+		transform-origin: right;
+	}
+}
+@keyframes myAnim1 {
+	0% {
+		opacity: 0;
+		transform: rotateY(-70deg);
+		transform-origin: left;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateY(0);
+		transform-origin: left;
+	}
+}
+
+@keyframes myAnimQuiz {
+	0% {
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

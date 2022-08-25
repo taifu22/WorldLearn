@@ -1,5 +1,6 @@
 .page-worldmap {
    height: 500px;
+   animation: myAnim1 1.5s ease 0s 1 normal forwards;
    .world-map{
       display: flex;
       justify-content: center;

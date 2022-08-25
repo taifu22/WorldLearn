@@ -7,7 +7,7 @@ function FlagComponent(props) {
                 <p>{props.name}</p>
                 <img src={props.image}></img>
             </div>
-            <i class="fas fa-solid fa-caret-down"></i>
+            <i className="fas fa-solid fa-caret-down"></i>
         </div>
     );
 }

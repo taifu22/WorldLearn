@@ -1,4 +1,5 @@
 .div-home {
+    animation: myAnimHome 1s ease 0s 1 normal forwards;
     display: flex;
     flex-direction: column;
     height: 520px;
@@ -12,7 +13,7 @@
             flex-direction: column;
             align-items: center;
             h1 {
-                width: 45%;
+                width: 45%; 
                 text-align: center;
             }
             img {

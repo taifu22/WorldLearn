@@ -6,6 +6,17 @@
     height: 100vh;
     z-index: 1040;
     background-color: rgba(0, 0, 0, 0.5);
+    animation: myAnimHome 1s ease 0s 1 normal forwards;
+  }
+  .modal-overlay1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1040;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: myAnimHome1 1s ease 0s 1 normal forwards;
   }
 
   .modal-wrapper {

@@ -10,7 +10,8 @@ import World from '../assets/World.png';
 function Listofstates(props) {
 
     const [toggleWorld, setToggleWorld] = useState(true);
-    const [toggleContinent, setToggleContinent] = useState(false)
+    const [toggleContinent, setToggleContinent] = useState(false);
+    const [animationWorld, setAnimationWorld] = useState();
     const [dataPaysinfo, setDataPaysInfo] = useState();
     const [dataAfrica, setDataAfrica] = useState([]);
     const [dataAsia, setDataAsia] = useState([]);
@@ -59,7 +60,7 @@ function Listofstates(props) {
 
     return dataPaysinfo && (
         <div className='div-listofpays'>
-            {toggleWorld && <div className='div-world'>
+            {toggleWorld && <div className={toggleWorld ? 'div-world' : 'div-world1'}>
                  <img src={World}></img>
                  <DropDown title={'World States'} pays={dataWorld} func={ArrayContinents}/>
                  <p className='p-world'>

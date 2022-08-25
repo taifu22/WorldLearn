@@ -3,6 +3,7 @@
     position: relative;
     height: 500px;
     font-family: $font;
+    animation: myAnimHome 1s ease 0s 1 normal forwards;
     .container-text {
         z-index: auto;
         margin: 60px;

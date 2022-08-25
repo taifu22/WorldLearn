@@ -1,13 +1,14 @@
 import React from 'react';
 
 function ModaleInfo(props) {
+  console.log(props.show);
     return (
-        <div className="modal-overlay">
+        <div className={props.show ? "modal-overlay" : "modal-overlay1"}>
             <div className="modal-wrapper">
               <div className="modal">
                 <div className="modal-header">
                   <h4>{props.title}</h4>
-                  <button
+                  <button 
                     type="button"
                     className="modal-close-button"
                     onClick={props.hide}
