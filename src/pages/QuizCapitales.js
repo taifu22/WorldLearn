@@ -22,6 +22,7 @@ function QuizCapitales(props) {
     let [randomNumberArray, setRandomNumberArray] = useState([]);
     const [color, setColor] = useState(false);
     const [toggle10Responses, setToggle10Responses] = useState(false);
+    const [green, setgreen] = useState(false);
 
     useEffect(() => {
         fetch('./countries.json', {
@@ -37,7 +38,7 @@ function QuizCapitales(props) {
         })
     }, [])
 
-    //useEffect(() => console.log(arrayResponses), [arrayResponses]);
+    useEffect(() => console.log(green), [green]);
 
     function randomNumberscChoicie(num) {
         for (let i = 0; i < 250; i++) {
@@ -84,14 +85,14 @@ function QuizCapitales(props) {
         
         arrayCapitales.map((item, index) => {
             if (item.name === arrayCapitales[randomNumber].name) {
-                setcapital(capital =>[...capital, item.capital]);
+                setcapital(capital =>[...capital, {green:item.capital, color:'green'}]);
                 setArrayResponses(arrayResponses =>[...arrayResponses, {capitale :item.capital, nom:item.name, id:item.id}]);
             } else if (index === randomNumber1) {
-                setcapital(capital =>[...capital, item.capital]);
+                setcapital(capital =>[...capital, {green:item.capital, color:''}]);
             } else if (index === randomNumber2) {
-                setcapital(capital =>[...capital, item.capital]);
+                setcapital(capital =>[...capital, {green:item.capital, color:''}]);
             } else if (index === randomNumber3) {
-                setcapital(capital =>[...capital, item.capital]);
+                setcapital(capital =>[...capital, {green:item.capital, color:''}]);
             }
         })
         setCountResponses(countResponses+=1);
@@ -109,14 +110,13 @@ function QuizCapitales(props) {
                 setCount(2);
                 toggleColor();
                 StartQuiz();
-                console.log(toggle10Responses);
-                console.log(countResponses);
+                setgreen(false);
                 return;
               }
           }, 1000);
     }
 
-    if (toggle10Responses && countResponses == 3) {
+    if (toggle10Responses && countResponses == 8) {
         arrayResponses.pop();
         return <QuizResult data={arrayResponses}/>
     }
@@ -136,11 +136,11 @@ function QuizCapitales(props) {
                 <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{setToggleLength(!toggleLength);StartQuiz();}}>Demarrer le quiz</button>
                 <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>NextQuiz()}>Restart new quiz</button>
                 <p style={toggleLength ? {display:'block'} : {display:'none'}}>timer {}</p>
-                <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>NextQuiz()}>Question suivante</button>
+                <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>{setgreen(true);NextQuiz()}}>Question suivante</button>
             </div>
             {capital  && namePays && flagPays && randomnum1 && randomnum2
             && randomnum3 && randomnum4 && 
-            <QuizComponent color={color} name={namePays} flag={flagPays} toggle={toggleLength} cap={capital} random1={randomnum1}
+            <QuizComponent color={green} name={namePays} flag={flagPays} toggle={toggleLength} cap={capital} random1={randomnum1}
               random2={randomnum2} random3={randomnum3} random4={randomnum4} />}
         </div>
     );
