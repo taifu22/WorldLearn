@@ -606,20 +606,72 @@ path :focus {
   width: 100px;
 }
 .div-quizCapitales .header-quiz {
-  display: flex;
-  justify-content: space-between;
-}
-.div-quizCapitales .quiz-body {
+  margin-top: -50px;
+  margin-bottom: -60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.div-quizCapitales .responses .group-responses {
+.div-quizCapitales .header-quiz button {
+  cursor: pointer;
+  margin: 18px;
+  background-color: #132344;
+  color: white;
+  width: auto;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+}
+.div-quizCapitales .header-quiz .hover-button:hover {
+  border: solid 1px #FFA808;
+  background-color: #FFA808;
+  color: #132344;
+}
+.div-quizCapitales .header-quiz .hover-button:focus {
+  border: solid 1px #FFA808;
+  background-color: #FFA808;
+  color: #132344;
+}
+.div-quizCapitales .header-quiz p {
+  margin-top: -40px;
+}
+
+.quiz-body {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.responses .group-responses {
+  display: flex;
+  justify-content: space-around;
   margin: 50px;
-  margin-bottom: 0;
+  margin-bottom: -30px;
+}
+.responses .group-responses button {
+  cursor: pointer;
+  background-color: #132344;
+  color: white;
+  width: 20%;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+}
+.responses .group-responses .hover-button:hover {
+  border: solid 1px #FFA808;
+  background-color: #FFA808;
+  color: #132344;
+}
+.responses .group-responses .hover-button:focus {
+  border: solid 1px #FFA808;
+  background-color: #FFA808;
+  color: #132344;
 }
 
 body {

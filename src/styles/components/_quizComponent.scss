@@ -1,24 +1,21 @@
-.div-quizCapitales {
-    margin: 100px;
+.quiz-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    img {
-        width: 100px;
-    }
-    .header-quiz {
-        margin-top: -50px;
-        margin-bottom: -60px;
+    align-items: center;
+}
+.responses {
+    .group-responses {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-around;
+        margin:50px;
+        margin-bottom: -30px;
         button {
             cursor: pointer;
-            margin: 18px;
+            //margin: 18px;
             background-color: $color-font;
             color: white;
-            width: auto;
+            width: 20%;
             height: 50px;
             border-radius: 10px;
             font-family: $font;
@@ -36,9 +33,6 @@
                 background-color: $background;
                 color: $color-font;
             }
-        }
-        p {
-            margin-top: -40px;
         }
     }
 }

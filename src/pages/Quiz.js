@@ -19,7 +19,7 @@ function Quiz(props) {
                     <button><Link style={{textDecoration:'none', color:'white'}} to="/quizdrapeaux">Acceder</Link></button>
                 </div>
             </div>
-        </div>
+        </div> 
     );
 }
 

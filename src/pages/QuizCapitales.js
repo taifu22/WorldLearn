@@ -1,20 +1,21 @@
 import React, { useEffect, useState }from 'react';
+import QuizComponent from '../components/QuizComponent';
 
 function QuizCapitales(props) {
 
     const [datapaysInfo, setDataPaysInfo] = useState();
     const [toggleLength, setToggleLength] = useState(false);
-    let [timer, setTimer] = useState(5);
+    let [count, setCount] = useState(2)
+    let [timer, setTimer1] = useState();
     const [arrayCapitales, setArrayCapitales] = useState([]);
     let [flagPays, setFlagPays] = useState();
     let [namePays, setNamepays] = useState();
     let [capital, setcapital] = useState([]);
-    //const [randomNumber, setRandomNumber] = useState();
     const [randomnum1, setRandomNum1] = useState(1);
     const [randomnum2, setRandomNum2] = useState(2);
     const [randomnum3, setRandomNum3] = useState(3);
     const [randomnum4, setRandomNum4] = useState(4);
-    let interval;
+    let randomNumber;
     let [randomNumberArray, setRandomNumberArray] = useState([]);
 
     useEffect(() => {
@@ -30,6 +31,8 @@ function QuizCapitales(props) {
          setDataPaysInfo(data); 
         })
     }, [])
+
+    //useEffect(() => console.log(namePays, capital), [namePays, capital]);
 
     function randomNumberscChoicie(num) {
         for (let i = 0; i < 250; i++) {
@@ -50,112 +53,77 @@ function QuizCapitales(props) {
         setRandomNum2(randomNumberArray[1])
         setRandomNum3(randomNumberArray[2])
         setRandomNum4(randomNumberArray[3])
-        //console.log(randomNumberArray);
     }
 
     function entierAleatoire(min, max){
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    if (datapaysInfo && !arrayCapitales.length) {
-        datapaysInfo.map(item => {
-            if (item.capital[0].length > 2) {
-                arrayCapitales.push({id:item.cca3, name:item.name.common, capital:item.capital[0]});   
+    function StartQuiz() {
+        randomNumberscChoicie(4)
+        randomNumber = entierAleatoire(0, 249);
+        if (datapaysInfo && !arrayCapitales.length) {
+            datapaysInfo.map(item => {
+                if (item.capital[0].length > 2) {
+                    arrayCapitales.push({id:item.cca3, name:item.name.common, capital:item.capital[0]});   
+                }
+            })
+        }
+        setNamepays(arrayCapitales[randomNumber].name);
+        setFlagPays(`/data/${arrayCapitales[randomNumber].id}.svg`);
+
+        setcapital([0]);
+        let randomNumber1 = entierAleatoire(0, 244);
+        let randomNumber2 = entierAleatoire(0, 244);
+        let randomNumber3 = entierAleatoire(0, 244);
+        
+        arrayCapitales.map((item, index) => {
+            if (item.name === arrayCapitales[randomNumber].name) {
+                setcapital(capital =>[...capital, item.capital]);
+            } else if (index === randomNumber1) {
+                setcapital(capital =>[...capital, item.capital]);
+            } else if (index === randomNumber2) {
+                setcapital(capital =>[...capital, item.capital]);
+            } else if (index === randomNumber3) {
+                setcapital(capital =>[...capital, item.capital]);
             }
         })
     }
 
-    function StartQuiz() {
-        randomNumberscChoicie(4)
-        let randomNumber = entierAleatoire(0, 249);
-        console.log(randomNumber);
-        setNamepays(arrayCapitales[randomNumber].name);
-        setFlagPays(`/data/${arrayCapitales[randomNumber].id}.svg`);
-        //console.log(namePays)
-        //setRandomNumber(entierAleatoire(0, 249));
-        // if (datapaysInfo && !arrayCapitales.length) {
-        //     datapaysInfo.map(item => {
-        //         if (item.capital[0].length > 2) {
-        //             arrayCapitales.push({id:item.cca3, name:item.name.common, capital:item.capital[0]});   
-        //         }
-        //     })
-        // }
-        // setNamepays(arrayCapitales[randomNumber].name);
-        // setFlagPays(`/data/${arrayCapitales[randomNumber].id}.svg`);
-            // interval = setInterval(() => {
-            //     setTimer(timer-=1);
-            //     if (timer === 0) {
-            //         clearInterval(interval)
-            //     }
-            // }, 1000);
-            capital.push(0);
-            let randomNumber1 = entierAleatoire(0, 244);
-            let randomNumber2 = entierAleatoire(0, 244);
-            let randomNumber3 = entierAleatoire(0, 244);
-    
-            arrayCapitales.map((item, index) => {
-                if (item.name === arrayCapitales[randomNumber].name) {
-                    capital.push(item.capital);
-                } else if (index === randomNumber1) {
-                    capital.push(item.capital);
-                } else if (index === randomNumber2) {
-                    capital.push(item.capital);
-                } else if (index === randomNumber3) {
-                    capital.push(item.capital);
-                }
-            })
-            //console.log(capital);
-            //randomNumberscChoicie(4)
+    const NextQuiz = () => {
+        const newIntervalId = setInterval(() => {
+            setCount(count-=1)
+            console.log(count);
+            if (count === 0) {
+                clearInterval(newIntervalId);
+                setCount(2);
+                StartQuiz();
+                return;
+              }
+          }, 1000);
     }
 
-    function RestartQuiz() {
-        // clearInterval(interval);
-        // setTimer(5);
-        //setArrayCapitales([]);
-        //setFlagPays();
-        //setNamepays();
-        capital=[];
-        //setRandomNum1('');
-        //setRandomNum2('');
-        //setRandomNum3('');
-        //setRandomNum4('');
-        randomNumberArray =[];
-        StartQuiz();
-        console.log(namePays);
-    }
+    // function NextQuiz() {
+    //     handleClick();
+    //     StartQuiz();
+    // }
 
     return (
         <div className='div-quizCapitales'>
-            <div className='header-quiz'>
-                <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{
-                                                                                                   console.log(arrayCapitales);
-                                                                                                   setToggleLength(!toggleLength);
-                                                                                                   StartQuiz();
-                                                                                                 }}>Demarrer le quiz</button>
-                <button style={toggleLength ? {display:'block'} : {display:'none'}} onClick={()=>{
-                                                                                                  //setRandomNumber(entierAleatoire(0, 249));
-                                                                                                  RestartQuiz()
-                                                                                                  }}>Restart new quiz</button>
-                <div>
-                    <p>timer {timer}</p>
-                </div>
+            <div style={toggleLength ? {justifyContent:'space-between', flexDirection:'row'} : {display:'flex'}} className='header-quiz'>
+                <h1 style={toggleLength ? {display:'none'} : {display:'block'}}>Choisissez le nombre de questions</h1>
+                <button style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>10 questions et 1 minute 40 de temps</button>
+                <button style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>15 questions et 2 minute 30 de temps</button>
+                <button style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>30 questions et 4 minute 20 de temps</button>
+                <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{setToggleLength(!toggleLength);StartQuiz();}}>Demarrer le quiz</button>
+                <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>NextQuiz()}>Restart new quiz</button>
+                <p style={toggleLength ? {display:'block'} : {display:'none'}}>timer {}</p>
+                <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>NextQuiz()}>Question suivante</button>
             </div>
             {capital  && namePays && flagPays && randomnum1 && randomnum2
-            && randomnum3 && randomnum4 && <>
-            <div className='quiz-body'>
-                <img src={flagPays}></img> 
-                <p>{namePays}</p>
-            </div>
-            <div className='responses'>
-                <div style={toggleLength ? {display:'flex'} : {display:'none'}} className='group-responses'>
-                    <button>{capital[randomnum1]}</button>
-                    <button>{capital[randomnum2]}</button>
-                </div>
-                <div style={toggleLength ? {display:'flex'} : {display:'none'}} className='group-responses'>
-                    <button>{capital[randomnum3]}</button>
-                    <button>{capital[randomnum4]}</button>
-                </div>
-            </div></>}
+            && randomnum3 && randomnum4 && 
+            <QuizComponent name={namePays} flag={flagPays} toggle={toggleLength} cap={capital} random1={randomnum1}
+              random2={randomnum2} random3={randomnum3} random4={randomnum4} />}
         </div>
     );
 }
