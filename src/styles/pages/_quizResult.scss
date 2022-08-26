@@ -1,0 +1,16 @@
+.div-quiz-result {
+    display: flex;
+    flex-direction: column;
+    div {
+        display: flex;
+        flex-direction: column;
+        div {
+            display: flex;
+            flex-direction: row;
+            img {
+                width: 60px;
+                height: auto;
+            }
+        }
+    }
+}

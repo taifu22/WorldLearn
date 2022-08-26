@@ -615,15 +615,16 @@ path :focus {
 }
 .div-quizCapitales .header-quiz button {
   cursor: pointer;
-  margin: 18px;
   background-color: #132344;
   color: white;
-  width: auto;
+  width: 20%;
   height: 50px;
   border-radius: 10px;
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 20px;
+  width: auto;
+  margin: 18px;
 }
 .div-quizCapitales .header-quiz .hover-button:hover {
   border: solid 1px #FFA808;
@@ -663,15 +664,47 @@ path :focus {
   font-weight: bold;
   font-size: 20px;
 }
-.responses .group-responses .hover-button:hover {
+.responses .group-responses .hover-button-responses:hover {
   border: solid 1px #FFA808;
   background-color: #FFA808;
   color: #132344;
 }
-.responses .group-responses .hover-button:focus {
+.responses .group-responses .button-yellow {
   border: solid 1px #FFA808;
   background-color: #FFA808;
   color: #132344;
+}
+.responses .group-responses .button-red {
+  border: solid 1px red;
+  background-color: red;
+  color: white;
+}
+.responses .group-responses .button-green {
+  border: solid 1px green;
+  background-color: green;
+  color: white;
+}
+.responses .group-responses .button-bleu {
+  border: solid 1px #132344;
+  background-color: #132344;
+  color: white;
+}
+
+.div-quiz-result {
+  display: flex;
+  flex-direction: column;
+}
+.div-quiz-result div {
+  display: flex;
+  flex-direction: column;
+}
+.div-quiz-result div div {
+  display: flex;
+  flex-direction: row;
+}
+.div-quiz-result div div img {
+  width: 60px;
+  height: auto;
 }
 
 body {

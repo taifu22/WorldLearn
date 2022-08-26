@@ -7,6 +7,19 @@ body {
     font-weight: bold;
 }
 
+@mixin button {
+	        cursor: pointer;
+            //margin: 18px;
+            background-color: $color-font;
+            color: white;
+            width: 20%;
+            height: 50px;
+            border-radius: 10px;
+            font-family: $font;
+            font-weight: bold;
+            font-size: 20px;
+}
+
 @keyframes rotation1 {
     from {
         transform: rotate(-180deg);

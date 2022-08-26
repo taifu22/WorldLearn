@@ -1,13 +1,16 @@
 import React, { useEffect, useState }from 'react';
 import QuizComponent from '../components/QuizComponent';
+import QuizResult from './QuizResult';
 
 function QuizCapitales(props) {
 
     const [datapaysInfo, setDataPaysInfo] = useState();
     const [toggleLength, setToggleLength] = useState(false);
-    let [count, setCount] = useState(2)
+    let [count, setCount] = useState(2);
+    let [countResponses, setCountResponses] = useState(0);
     let [timer, setTimer1] = useState();
     const [arrayCapitales, setArrayCapitales] = useState([]);
+    let [arrayResponses, setArrayResponses] = useState([]);
     let [flagPays, setFlagPays] = useState();
     let [namePays, setNamepays] = useState();
     let [capital, setcapital] = useState([]);
@@ -17,6 +20,8 @@ function QuizCapitales(props) {
     const [randomnum4, setRandomNum4] = useState(4);
     let randomNumber;
     let [randomNumberArray, setRandomNumberArray] = useState([]);
+    const [color, setColor] = useState(false);
+    const [toggle10Responses, setToggle10Responses] = useState(false);
 
     useEffect(() => {
         fetch('./countries.json', {
@@ -32,7 +37,7 @@ function QuizCapitales(props) {
         })
     }, [])
 
-    //useEffect(() => console.log(namePays, capital), [namePays, capital]);
+    //useEffect(() => console.log(arrayResponses), [arrayResponses]);
 
     function randomNumberscChoicie(num) {
         for (let i = 0; i < 250; i++) {
@@ -80,6 +85,7 @@ function QuizCapitales(props) {
         arrayCapitales.map((item, index) => {
             if (item.name === arrayCapitales[randomNumber].name) {
                 setcapital(capital =>[...capital, item.capital]);
+                setArrayResponses(arrayResponses =>[...arrayResponses, {capitale :item.capital, nom:item.name, id:item.id}]);
             } else if (index === randomNumber1) {
                 setcapital(capital =>[...capital, item.capital]);
             } else if (index === randomNumber2) {
@@ -88,19 +94,31 @@ function QuizCapitales(props) {
                 setcapital(capital =>[...capital, item.capital]);
             }
         })
+        setCountResponses(countResponses+=1);
+    }
+
+    function toggleColor() {
+        setColor(!color);
     }
 
     const NextQuiz = () => {
         const newIntervalId = setInterval(() => {
             setCount(count-=1)
-            console.log(count);
             if (count === 0) {
                 clearInterval(newIntervalId);
                 setCount(2);
+                toggleColor();
                 StartQuiz();
+                console.log(toggle10Responses);
+                console.log(countResponses);
                 return;
               }
           }, 1000);
+    }
+
+    if (toggle10Responses && countResponses == 3) {
+        arrayResponses.pop();
+        return <QuizResult data={arrayResponses}/>
     }
 
     // function NextQuiz() {
@@ -112,7 +130,7 @@ function QuizCapitales(props) {
         <div className='div-quizCapitales'>
             <div style={toggleLength ? {justifyContent:'space-between', flexDirection:'row'} : {display:'flex'}} className='header-quiz'>
                 <h1 style={toggleLength ? {display:'none'} : {display:'block'}}>Choisissez le nombre de questions</h1>
-                <button style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>10 questions et 1 minute 40 de temps</button>
+                <button onClick={()=>setToggle10Responses(true)} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>10 questions et 1 minute 40 de temps</button>
                 <button style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>15 questions et 2 minute 30 de temps</button>
                 <button style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>30 questions et 4 minute 20 de temps</button>
                 <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{setToggleLength(!toggleLength);StartQuiz();}}>Demarrer le quiz</button>
@@ -122,7 +140,7 @@ function QuizCapitales(props) {
             </div>
             {capital  && namePays && flagPays && randomnum1 && randomnum2
             && randomnum3 && randomnum4 && 
-            <QuizComponent name={namePays} flag={flagPays} toggle={toggleLength} cap={capital} random1={randomnum1}
+            <QuizComponent color={color} name={namePays} flag={flagPays} toggle={toggleLength} cap={capital} random1={randomnum1}
               random2={randomnum2} random3={randomnum3} random4={randomnum4} />}
         </div>
     );

@@ -14,16 +14,10 @@
         justify-content: center;
         align-items: center;
         button {
-            cursor: pointer;
-            margin: 18px;
-            background-color: $color-font;
-            color: white;
+            @include button;
             width: auto;
-            height: 50px;
-            border-radius: 10px;
-            font-family: $font;
-            font-weight: bold;
-            font-size: 20px;
+            margin: 18px;
+            
         }
         .hover-button {
             &:hover{

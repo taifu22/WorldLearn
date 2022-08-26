@@ -10,6 +10,7 @@ import Listofstates from './pages/Listofstates';
 import Pageworldmap from './pages/Pageworldmap';
 import QuizCapitales from './pages/QuizCapitales';
 import QuizDrapeaux from './pages/QuizDrapeaux';
+import QuizResult from './pages/QuizResult';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path='quizdrapeaux' exact element={<QuizDrapeaux />}/>
               <Route path='pageworldmap' exact element={<Pageworldmap />}/>
               <Route path='listofstates' exact element={<Listofstates />}/>
+              <Route path='quizresult' exact element={<QuizResult />}/>
               <Route path='*' element={<Erreur_404 />}/>
           </Routes>
         </BrowserRouter> 

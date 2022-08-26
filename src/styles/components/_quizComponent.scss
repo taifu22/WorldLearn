@@ -11,28 +11,34 @@
         margin:50px;
         margin-bottom: -30px;
         button {
-            cursor: pointer;
-            //margin: 18px;
-            background-color: $color-font;
-            color: white;
-            width: 20%;
-            height: 50px;
-            border-radius: 10px;
-            font-family: $font;
-            font-weight: bold;
-            font-size: 20px;
+            @include button
         }
-        .hover-button {
+        .hover-button-responses {
             &:hover{
                 border: solid 1px $background;
                 background-color: $background;
                 color: $color-font;
             }
-            &:focus {
-                border: solid 1px $background;
-                background-color: $background;
-                color: $color-font;
-            }
+        }
+        .button-yellow {
+            border: solid 1px $background;
+            background-color: $background;
+            color: $color-font;
+        }
+        .button-red {
+            border: solid 1px red;
+            background-color: red;
+            color: white;
+        }
+        .button-green {
+            border: solid 1px green;
+            background-color: green;
+            color: white;
+        }
+        .button-bleu {
+            border: solid 1px $color-font;
+            background-color: $color-font;
+            color: white;
         }
     }
 }
