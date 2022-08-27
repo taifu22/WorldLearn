@@ -8,7 +8,9 @@ function QuizCapitales(props) {
     const [toggleLength, setToggleLength] = useState(false);
     let [count, setCount] = useState(2);
     let [countResponses, setCountResponses] = useState(0);
-    let [timer, setTimer1] = useState();
+    let [timer10, setTimer10] = useState(10);
+    let [timer15, setTimer15] = useState(150);
+    let [timer30, setTimer30] = useState(300);
     const [arrayCapitales, setArrayCapitales] = useState([]);
     let [arrayResponses, setArrayResponses] = useState([]);
     let [flagPays, setFlagPays] = useState();
@@ -22,6 +24,8 @@ function QuizCapitales(props) {
     let [randomNumberArray, setRandomNumberArray] = useState([]);
     const [color, setColor] = useState(false);
     const [toggle10Responses, setToggle10Responses] = useState(false);
+    const [toggle15Responses, setToggle15Responses] = useState(false);
+    const [toggle30Responses, setToggle30Responses] = useState(false);
     const [green, setgreen] = useState(false);
 
     useEffect(() => {
@@ -38,7 +42,7 @@ function QuizCapitales(props) {
         })
     }, [])
 
-    useEffect(() => console.log(green), [green]);
+    //useEffect(() => console.log(timer), [timer]);
 
     function randomNumberscChoicie(num) {
         for (let i = 0; i < 250; i++) {
@@ -116,26 +120,55 @@ function QuizCapitales(props) {
           }, 1000);
     }
 
-    if (toggle10Responses && countResponses == 8) {
+    function startTimer() {
+        if (toggle10Responses) {
+            const newIntervalId = setInterval(() => {
+                setTimer10(timer10-=1)
+                if (timer10 === 0) {
+                    clearInterval(newIntervalId);
+                    return;
+                }
+            }, 1000);
+        } else if (toggle15Responses) {
+            const newIntervalId = setInterval(() => {
+                setTimer15(timer15-=1)
+                if (count === 0) {
+                    clearInterval(newIntervalId);
+                    return;
+                }
+            }, 1000);
+        } else if (toggle30Responses) {
+            const newIntervalId = setInterval(() => {
+                setTimer30(timer30-=1)
+                if (count === 0) {
+                    clearInterval(newIntervalId);
+                    return;
+                }
+            }, 1000);
+        }   
+    }
+
+    if (toggle10Responses && countResponses == 10 || timer10 === 0) {
+        //arrayResponses.pop();
+        return <QuizResult data={arrayResponses}/>
+    } else if (toggle15Responses && countResponses == 15) {
+        arrayResponses.pop();
+        return <QuizResult data={arrayResponses}/>
+    } else if (toggle30Responses && countResponses == 30) {
         arrayResponses.pop();
         return <QuizResult data={arrayResponses}/>
     }
-
-    // function NextQuiz() {
-    //     handleClick();
-    //     StartQuiz();
-    // }
 
     return (
         <div className='div-quizCapitales'>
             <div style={toggleLength ? {justifyContent:'space-between', flexDirection:'row'} : {display:'flex'}} className='header-quiz'>
                 <h1 style={toggleLength ? {display:'none'} : {display:'block'}}>Choisissez le nombre de questions</h1>
-                <button onClick={()=>setToggle10Responses(true)} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>10 questions et 1 minute 40 de temps</button>
-                <button style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>15 questions et 2 minute 30 de temps</button>
-                <button style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>30 questions et 4 minute 20 de temps</button>
-                <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{setToggleLength(!toggleLength);StartQuiz();}}>Demarrer le quiz</button>
+                <button onClick={()=>{setToggle10Responses(true)}} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>10 questions et 1 minute 40 de temps</button>
+                <button onClick={()=>setToggle15Responses(true)} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>15 questions et 2 minute 30 de temps</button>
+                <button onClick={()=>setToggle30Responses(true)} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>30 questions et 4 minute 20 de temps</button>
+                <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{setToggleLength(!toggleLength);startTimer();StartQuiz();}}>Demarrer le quiz</button>
                 <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>NextQuiz()}>Restart new quiz</button>
-                <p style={toggleLength ? {display:'block'} : {display:'none'}}>timer {}</p>
+                <p style={toggleLength ? {display:'block'} : {display:'none'}}>timer {timer10 ? timer10 : timer15 ? timer15 : timer30 ? timer30 : ""}</p>
                 <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>{setgreen(true);NextQuiz()}}>Question suivante</button>
             </div>
             {capital  && namePays && flagPays && randomnum1 && randomnum2

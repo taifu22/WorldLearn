@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function QuizResult(props) {
     return (
@@ -17,6 +18,7 @@ function QuizResult(props) {
                     </div>
                 )
             })}
+            <button><Link style={{color:'white' , textDecoration:'none'}} to={"/quiz"}>Retourner sur la page Quiz</Link></button>
         </div>
     );
 }

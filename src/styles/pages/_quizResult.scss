@@ -13,4 +13,8 @@
             }
         }
     }
+    button {
+        @include button;
+        color: white;
+    }
 }
