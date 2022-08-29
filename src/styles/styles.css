@@ -706,6 +706,18 @@ path :focus {
   width: 60px;
   height: auto;
 }
+.div-quiz-result button {
+  cursor: pointer;
+  background-color: #132344;
+  color: white;
+  width: 20%;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
 
 body {
   background-color: rgb(207, 221, 248);

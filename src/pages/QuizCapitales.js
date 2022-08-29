@@ -8,7 +8,7 @@ function QuizCapitales(props) {
     const [toggleLength, setToggleLength] = useState(false);
     let [count, setCount] = useState(2);
     let [countResponses, setCountResponses] = useState(0);
-    let [timer10, setTimer10] = useState(10);
+    let [timer10, setTimer10] = useState(100);
     let [timer15, setTimer15] = useState(150);
     let [timer30, setTimer30] = useState(300);
     const [arrayCapitales, setArrayCapitales] = useState([]);
@@ -65,13 +65,13 @@ function QuizCapitales(props) {
         setRandomNum4(randomNumberArray[3])
     }
 
-    function entierAleatoire(min, max){
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
     function StartQuiz() {
         randomNumberscChoicie(4)
-        randomNumber = entierAleatoire(0, 249);
+        let arrayrandom = Object.keys([...new Array(244)]).sort( ()=>Math.random()-0.5 );
+        let randomNumber = arrayrandom.pop();
+        let randomNumber1 = arrayrandom.pop();
+        let randomNumber2 = arrayrandom.pop();
+        let randomNumber3 = arrayrandom.pop();
         if (datapaysInfo && !arrayCapitales.length) {
             datapaysInfo.map(item => {
                 if (item.capital[0].length > 2) {
@@ -79,23 +79,21 @@ function QuizCapitales(props) {
                 }
             })
         }
+        console.log(arrayCapitales);
         setNamepays(arrayCapitales[randomNumber].name);
         setFlagPays(`/data/${arrayCapitales[randomNumber].id}.svg`);
 
         setcapital([0]);
-        let randomNumber1 = entierAleatoire(0, 244);
-        let randomNumber2 = entierAleatoire(0, 244);
-        let randomNumber3 = entierAleatoire(0, 244);
         
         arrayCapitales.map((item, index) => {
             if (item.name === arrayCapitales[randomNumber].name) {
                 setcapital(capital =>[...capital, {green:item.capital, color:'green'}]);
                 setArrayResponses(arrayResponses =>[...arrayResponses, {capitale :item.capital, nom:item.name, id:item.id}]);
-            } else if (index === randomNumber1) {
+            } else if (index == randomNumber1) {
                 setcapital(capital =>[...capital, {green:item.capital, color:''}]);
-            } else if (index === randomNumber2) {
+            } else if (index == randomNumber2) {
                 setcapital(capital =>[...capital, {green:item.capital, color:''}]);
-            } else if (index === randomNumber3) {
+            } else if (index == randomNumber3) {
                 setcapital(capital =>[...capital, {green:item.capital, color:''}]);
             }
         })
@@ -132,7 +130,7 @@ function QuizCapitales(props) {
         } else if (toggle15Responses) {
             const newIntervalId = setInterval(() => {
                 setTimer15(timer15-=1)
-                if (count === 0) {
+                if (timer15 === 0) {
                     clearInterval(newIntervalId);
                     return;
                 }
@@ -140,7 +138,7 @@ function QuizCapitales(props) {
         } else if (toggle30Responses) {
             const newIntervalId = setInterval(() => {
                 setTimer30(timer30-=1)
-                if (count === 0) {
+                if (timer30 === 0) {
                     clearInterval(newIntervalId);
                     return;
                 }
@@ -163,18 +161,18 @@ function QuizCapitales(props) {
         <div className='div-quizCapitales'>
             <div style={toggleLength ? {justifyContent:'space-between', flexDirection:'row'} : {display:'flex'}} className='header-quiz'>
                 <h1 style={toggleLength ? {display:'none'} : {display:'block'}}>Choisissez le nombre de questions</h1>
-                <button onClick={()=>{setToggle10Responses(true)}} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>10 questions et 1 minute 40 de temps</button>
-                <button onClick={()=>setToggle15Responses(true)} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>15 questions et 2 minute 30 de temps</button>
-                <button onClick={()=>setToggle30Responses(true)} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>30 questions et 4 minute 20 de temps</button>
+                <button onClick={()=>{setToggle10Responses(true);setToggle15Responses(false);setToggle30Responses(false)}} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>10 questions et 1 minute 40 de temps</button>
+                <button onClick={()=>{setToggle15Responses(true);setToggle10Responses(false);setToggle30Responses(false)}} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>15 questions et 2 minute 30 de temps</button>
+                <button onClick={()=>{setToggle30Responses(true);setToggle15Responses(false);setToggle10Responses(false)}} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>30 questions et 4 minute 20 de temps</button>
                 <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{setToggleLength(!toggleLength);startTimer();StartQuiz();}}>Demarrer le quiz</button>
                 <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>NextQuiz()}>Restart new quiz</button>
-                <p style={toggleLength ? {display:'block'} : {display:'none'}}>timer {timer10 ? timer10 : timer15 ? timer15 : timer30 ? timer30 : ""}</p>
+                <p style={toggleLength ? {display:'block'} : {display:'none'}}>timer {toggle10Responses ? Math.floor(timer10/60)+":"+timer10%60 : toggle15Responses ? Math.floor(timer15/60)+":"+timer15%60 : toggle30Responses ? Math.floor(timer30/60)+":"+timer30%60 : ""}</p>
                 <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>{setgreen(true);NextQuiz()}}>Question suivante</button>
             </div>
             {capital  && namePays && flagPays && randomnum1 && randomnum2
             && randomnum3 && randomnum4 && 
             <QuizComponent color={green} name={namePays} flag={flagPays} toggle={toggleLength} cap={capital} random1={randomnum1}
-              random2={randomnum2} random3={randomnum3} random4={randomnum4} />}
+              random2={randomnum2} count={countResponses} random3={randomnum3} random4={randomnum4} />}
         </div>
     );
 }

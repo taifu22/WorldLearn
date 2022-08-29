@@ -6,7 +6,7 @@ function ModaleInfo(props) {
         <div className={props.show ? "modal-overlay" : "modal-overlay1"}>
             <div className="modal-wrapper">
               <div className="modal">
-                <div className="modal-header">
+                <div className="modal-header"> 
                   <h4>{props.title}</h4>
                   <button 
                     type="button"

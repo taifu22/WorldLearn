@@ -71,7 +71,7 @@ function DropDown(props) {
                  })}
                  </ul>
             </div>}
-            {isInfoShowed && <ModaleInfo id={dataPaysinfo1.cca3} title={dataPaysinfo1.name.common} languages={dataPaysinfo1.languages} hide={toggleInfo}/>}
+            {isInfoShowed && <ModaleInfo id={dataPaysinfo1.cca3} title={dataPaysinfo1.name.common} languages={dataPaysinfo1.languages} hide={toggleInfo} show={isInfoShowed}/>}
         </div> 
     );
 }
