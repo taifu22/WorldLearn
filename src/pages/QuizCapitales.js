@@ -8,7 +8,7 @@ function QuizCapitales(props) {
     const [toggleLength, setToggleLength] = useState(false);
     let [count, setCount] = useState(2);
     let [countResponses, setCountResponses] = useState(0);
-    let [timer10, setTimer10] = useState(10);
+    let [timer10, setTimer10] = useState(100);
     let [timer15, setTimer15] = useState(150);
     let [timer30, setTimer30] = useState(300);
     const [arrayCapitales, setArrayCapitales] = useState([]);
@@ -130,11 +130,11 @@ function QuizCapitales(props) {
         }   
     }
 
-    if (toggle10Responses && countResponses == 10 || timer10 === 0) {
+    if (toggle10Responses && countResponses > 10 || timer10 === 0) {
         return <QuizResult data={arrayResponses}/>
-    } else if (toggle15Responses && countResponses == 15 || timer15 === 0) {
+    } else if (toggle15Responses && countResponses > 15 || timer15 === 0) {
         return <QuizResult data={arrayResponses}/>
-    } else if (toggle30Responses && countResponses == 30 || timer15 === 0) {
+    } else if (toggle30Responses && countResponses > 30 || timer15 === 0) {
         return <QuizResult data={arrayResponses}/>
     }
 
@@ -152,7 +152,8 @@ function QuizCapitales(props) {
             </div>
             {InfoPays.capital  && InfoPays.name && InfoPays.flag && randomnum && 
             <QuizComponent colorgreen={green} colorbleu={bleu} name={InfoPays.name} flag={InfoPays.flag} toggle={toggleLength} cap={InfoPays.capital} random1={randomnum[0]}
-              random2={randomnum[1]} count={countResponses} random3={randomnum[2]} random4={randomnum[3]} func={()=>setbleu(false)}/>}
+              random2={randomnum[1]} count={countResponses} random3={randomnum[2]} random4={randomnum[3]} func={()=>setbleu(false)}
+              toggle10={toggle10Responses} toggle15={toggle15Responses} toggle30={toggle30Responses}/>}
         </div>
     );
 }

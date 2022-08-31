@@ -2,10 +2,16 @@ import React ,{useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 function QuizResult(props) {
-    useEffect(() => console.log(props.data), [props.data]);
-    if (props.data.length == 10) {
-        props.data.pop();
-    }
+    useEffect(() => {
+        if (props.data.length > 10) {
+            props.data.pop();
+        } else if (props.data.length > 15) {
+            props.data.pop();
+        } else if (props.data.length > 30) {
+            props.data.pop();
+        }
+    }, []);
+    
     return (
         <div className='div-quiz-result'>
         <h1>Voici les reponses corrects</h1>

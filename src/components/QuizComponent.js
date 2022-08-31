@@ -8,6 +8,7 @@ function QuizComponent(props) {
     const button4 = useRef(null);
 
     function handleColor(e) {
+        console.log(e);
         if (button1.current.className == 'button-yellow' || button2.current.className == 'button-yellow' || button3.current.className == 'button-yellow' || button4.current.className == 'button-yellow') {
             button1.current.className = 'hover-button-responses';
             button2.current.className = 'hover-button-responses';
@@ -20,7 +21,7 @@ function QuizComponent(props) {
     return (
         <div>
             <div className='quiz-body'>
-            <p>{props.count}</p>
+            <p>{props.count}/{props.toggle10 ? '10' : props.toggle15 ? '15' : props.toggle30 ? '30' : ''}</p>
                 <img src={props.flag}></img> 
                 <p>{props.name ? props.name : ""}</p>
             </div>
