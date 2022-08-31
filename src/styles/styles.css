@@ -689,6 +689,11 @@ path :focus {
   background-color: #132344;
   color: white;
 }
+.responses .group-responses .button-bleu:hover {
+  border: solid 1px #FFA808;
+  background-color: #FFA808;
+  color: #132344;
+}
 
 .div-quiz-result {
   display: flex;

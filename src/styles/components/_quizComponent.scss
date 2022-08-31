@@ -13,7 +13,7 @@
         button {
             @include button
         }
-        .hover-button-responses {
+        .hover-button-responses { 
             &:hover{
                 border: solid 1px $background;
                 background-color: $background;
@@ -39,6 +39,11 @@
             border: solid 1px $color-font;
             background-color: $color-font;
             color: white;
+            &:hover{
+                border: solid 1px $background;
+                background-color: $background;
+                color: $color-font;
+            }
         }
     }
 }

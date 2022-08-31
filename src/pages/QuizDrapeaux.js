@@ -7,24 +7,19 @@ function QuizDrapeaux(props) {
     const [toggleLength, setToggleLength] = useState(false);
     let [count, setCount] = useState(1);
     let [countResponses, setCountResponses] = useState(0);
-    let [timer10, setTimer10] = useState(100);
+    let [timer10, setTimer10] = useState(10);
     let [timer15, setTimer15] = useState(150);
     let [timer30, setTimer30] = useState(300);
     const [arrayNamePays, setArrayNamePays] = useState([]);
     let [arrayResponses, setArrayResponses] = useState([]);
-    let [flagPays, setFlagPays] = useState();
-    let [namePays, setNamepays] = useState([]);
-    const [randomnum1, setRandomNum1] = useState(1);
-    const [randomnum2, setRandomNum2] = useState(2);
-    const [randomnum3, setRandomNum3] = useState(3);
-    const [randomnum4, setRandomNum4] = useState(4);
-    //let randomNumber;
-    let [randomNumberArray, setRandomNumberArray] = useState([]);
+    let [InfoPays, setInfoPays] = useState({flag:"", arraypays:""});
+    const [randomnum, setRandomNum] = useState([1,2,3,4]);
     const [color, setColor] = useState(false);
     const [toggle10Responses, setToggle10Responses] = useState(false);
     const [toggle15Responses, setToggle15Responses] = useState(false);
     const [toggle30Responses, setToggle30Responses] = useState(false);
     const [green, setgreen] = useState(false);
+    const [bleu, setbleu] = useState();
 
     useEffect(() => {
         fetch('./countries.json', {
@@ -40,34 +35,20 @@ function QuizDrapeaux(props) {
         })
     }, [])
 
-    //useEffect(() => console.log(namePays), [namePays]);
+    useEffect(() => console.log(InfoPays), [InfoPays]);
     //useEffect(() => console.log(arrayNamePays), [arrayNamePays]);
 
-    function randomNumberscChoicie(num) {
-        for (let i = 0; i < 250; i++) {
-          let added1 = false;
-          let randomnum = Math.floor(Math.random() * num) + 1 ;
-          if (randomNumberArray.length) {
-            setRandomNumberArray([]);
-          }
-          do {
-            if (!randomNumberArray.includes(randomnum)) {
-                    
-              randomNumberArray.push(randomnum);
-              added1 = true;
-            }
-          } while ((added1 = false));
-        }
-        setRandomNum1(randomNumberArray[0])
-        setRandomNum2(randomNumberArray[1])
-        setRandomNum3(randomNumberArray[2])
-        setRandomNum4(randomNumberArray[3])
+    function randomNumberscChoicie() {
+        setRandomNum([]);
+        let randomNumberArray = Object.keys([...new Array(4)]).sort( ()=>Math.random()-0.5 );
+        setRandomNum(randomnum => ([...randomnum, parseInt(randomNumberArray[0])+1, parseInt(randomNumberArray[1])+1, parseInt(randomNumberArray[2])+1, parseInt(randomNumberArray[3])+1]))
     }
 
     function StartQuiz() {
-        randomNumberscChoicie(4)
+        //randomNumberscChoicie(4);
+        randomNumberscChoicie();
+        setInfoPays({flag:"", arraypays:""});
         let arrayrandom = Object.keys([...new Array(244)]).sort( ()=>Math.random()-0.5 );
-        console.log(arrayrandom);
         let randomNumber = arrayrandom.pop();
         let randomNumber1 = arrayrandom.pop();
         let randomNumber2 = arrayrandom.pop();
@@ -78,25 +59,21 @@ function QuizDrapeaux(props) {
                 arrayNamePays.push({id:item.cca3, name:item.name.common});   
             })
         }
-        //setNamepays(arrayCapitales[randomNumber].name);
-        setFlagPays(`/data/${arrayNamePays[randomNumber].id}.svg`);
+        
+        setInfoPays(infoPays => ({...infoPays,flag:`/data/${arrayNamePays[randomNumber].id}.svg`}));
 
-        setNamepays([0]);
+        setInfoPays(infoPays => ({...infoPays,arraypays:[...infoPays.arraypays, 0]}))
         
         arrayNamePays.map((item, index) => {
             if (item.name === arrayNamePays[randomNumber].name) {
-                console.log(item, index);
-                setNamepays(namePays =>[...namePays, {green:item.name, color:'green'}]);
+                setInfoPays(infoPays => ({...infoPays,arraypays:[...infoPays.arraypays, {green:item.name, color:'green'}]}));
                 setArrayResponses(arrayResponses =>[...arrayResponses, {namePays :item.name, id:item.id}]);
             } else if (index == randomNumber1) {
-                console.log(item, index);
-                setNamepays(namePays =>[...namePays, {green:item.name, color:''}]);
+                setInfoPays(infoPays => ({...infoPays,arraypays:[...infoPays.arraypays, {green:item.name, color:'red'}]}));
             } else if (index == randomNumber2) {
-                console.log(item, index);
-                setNamepays(namePays =>[...namePays, {green:item.name, color:''}]);
+                setInfoPays(infoPays => ({...infoPays,arraypays:[...infoPays.arraypays, {green:item.name, color:'red'}]}));
             } else if (index == randomNumber3) {
-                console.log(item, index);
-                setNamepays(namePays =>[...namePays, {green:item.name, color:''}]);
+                setInfoPays(infoPays => ({...infoPays,arraypays:[...infoPays.arraypays, {green:item.name, color:'red'}]}));
             }
         })
         setCountResponses(countResponses+=1);
@@ -115,8 +92,9 @@ function QuizDrapeaux(props) {
                 toggleColor();
                 StartQuiz();
                 setgreen(false);
+                setbleu(true);
                 return;
-              }
+            }
         }, 1000);
     }
 
@@ -167,12 +145,11 @@ function QuizDrapeaux(props) {
                 <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{setToggleLength(!toggleLength);startTimer();StartQuiz();}}>Demarrer le quiz</button>
                 <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>NextQuiz()}>Restart new quiz</button>
                 <p style={toggleLength ? {display:'block'} : {display:'none'}}>timer {toggle10Responses ? Math.floor(timer10/60)+":"+timer10%60 : toggle15Responses ? Math.floor(timer15/60)+":"+timer15%60 : toggle30Responses ? Math.floor(timer30/60)+":"+timer30%60 : ""}</p>
-                <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>{setgreen(true);NextQuiz()}}>Question suivante</button>
+                <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>{setgreen(true);setbleu(false);NextQuiz()}}>Question suivante</button>
             </div>
-            {namePays && flagPays && randomnum1 && randomnum2
-            && randomnum3 && randomnum4 && 
-            <QuizComponent color={green} cap={namePays} flag={flagPays} toggle={toggleLength} random1={randomnum1}
-              random2={randomnum2} count={countResponses} random3={randomnum3} random4={randomnum4} />}
+            {InfoPays.flag && randomnum[0] &&
+            <QuizComponent colorgreen={green} colorbleu={bleu} cap={InfoPays.arraypays} flag={InfoPays.flag} toggle={toggleLength} random1={randomnum[0]}
+              random2={randomnum[1]} count={countResponses} random3={randomnum[2]} random4={randomnum[3]} func={()=>setbleu(false)}/>}
         </div>
     );
 }

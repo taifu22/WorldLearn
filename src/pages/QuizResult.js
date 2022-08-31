@@ -15,8 +15,7 @@ function QuizResult(props) {
                       <div>
                          <p>{index+1} - </p>
                          <img src={`/data/${item.id}.svg`}></img>
-                         <p>capital of {item.nom} is </p>
-                         <p> : {item.capitale}</p>
+                         {item.nom ? <><p>capital of {item.nom} is </p> <p> : {item.capitale}</p></> : <p> this is the flag of {item.namePays}</p> }
                       </div>
                          <hr />
                     </div>
