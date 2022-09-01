@@ -11,6 +11,8 @@ function QuizResult(props) {
             props.data.pop();
         }
     }, []);
+
+    //useEffect(() => console.log(props.data),[props.data])
     
     return (
         <div className='div-quiz-result'>
@@ -21,7 +23,9 @@ function QuizResult(props) {
                       <div>
                          <p>{index+1} - </p>
                          <img src={`/data/${item.id}.svg`}></img>
-                         {item.nom ? <><p>capital of {item.nom} is </p> <p> : {item.capitale}</p></> : <p> this is the flag of {item.namePays}</p> }
+                         {item.nom ? <><p>Capital of {item.nom} is </p> <p> : {item.capitale}</p></> : <p> This is the flag of {item.namePays}</p> }
+                         {item.nom && props.dataResponses.includes(item.capitale) ? <p style={{color:'green' , marginLeft:'20px'}}>Good! That's right</p> : item.nom ? <p style={{color:'red', marginLeft:'20px'}}>That's not right</p> : ""}
+                         {item.namePays && props.dataResponses.includes(item.namePays) ? <p style={{color:'green' , marginLeft:'20px'}}>Good! That's right</p> : item.namePays ? <p style={{color:'red', marginLeft:'20px'}}>That's not right</p> : ""} 
                       </div>
                          <hr />
                     </div>

@@ -20,6 +20,7 @@ function QuizDrapeaux(props) {
     const [toggle30Responses, setToggle30Responses] = useState(false);
     const [green, setgreen] = useState(false);
     const [bleu, setbleu] = useState();
+    const [arrayRightWrong, setArrayRightWrong] = useState([]);
 
     useEffect(() => {
         fetch('./countries.json', {
@@ -35,7 +36,7 @@ function QuizDrapeaux(props) {
         })
     }, [])
 
-    useEffect(() => console.log(InfoPays), [InfoPays]);
+    //useEffect(() => console.log(InfoPays), [InfoPays]);
     //useEffect(() => console.log(arrayNamePays), [arrayNamePays]);
 
     function randomNumberscChoicie() {
@@ -83,12 +84,16 @@ function QuizDrapeaux(props) {
         setColor(!color);
     }
 
+    function RightWrongResponses(params) {
+        setArrayRightWrong(array => ([...array, params]))
+    }
+
     const NextQuiz = () => {
         const newIntervalId = setInterval(() => {
             setCount(count-=1)
             if (count === 0) {
                 clearInterval(newIntervalId);
-                setCount(2);
+                setCount(1);
                 toggleColor();
                 StartQuiz();
                 setgreen(false);
@@ -128,11 +133,11 @@ function QuizDrapeaux(props) {
     }
 
     if (toggle10Responses && countResponses > 10 || timer10 === 0) {
-        return <QuizResult data={arrayResponses}/>
+        return <QuizResult data={arrayResponses} dataResponses={arrayRightWrong}/>
     } else if (toggle15Responses && countResponses > 15 || timer15 === 0) {
-        return <QuizResult data={arrayResponses}/>
+        return <QuizResult data={arrayResponses} dataResponses={arrayRightWrong}/>
     } else if (toggle30Responses && countResponses > 30 || timer30 === 0) {
-        return <QuizResult data={arrayResponses}/>
+        return <QuizResult data={arrayResponses} dataResponses={arrayRightWrong}/>
     }
 
     return (
@@ -150,7 +155,7 @@ function QuizDrapeaux(props) {
             {InfoPays.flag && randomnum[0] &&
             <QuizComponent colorgreen={green} colorbleu={bleu} cap={InfoPays.arraypays} flag={InfoPays.flag} toggle={toggleLength} random1={randomnum[0]}
               random2={randomnum[1]} count={countResponses} random3={randomnum[2]} random4={randomnum[3]} func={()=>setbleu(false)}
-              toggle10={toggle10Responses} toggle15={toggle15Responses} toggle30={toggle30Responses}/>}
+              toggle10={toggle10Responses} toggle15={toggle15Responses} toggle30={toggle30Responses} funcRight={(e) => RightWrongResponses(e)}/>}
         </div>
     );
 }

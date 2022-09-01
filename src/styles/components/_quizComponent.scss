@@ -39,11 +39,12 @@
             border: solid 1px $color-font;
             background-color: $color-font;
             color: white;
-            &:hover{
-                border: solid 1px $background;
-                background-color: $background;
-                color: $color-font;
-            }
+            pointer-events: none;
+            // &:hover{
+            //     border: solid 1px $background;
+            //     background-color: $background;
+            //     color: $color-font;
+            // }
         }
     }
 }

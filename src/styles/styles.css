@@ -1,4 +1,5 @@
-body {
+html, body {
+  background-color: rgb(207, 221, 248);
   font-family: "Montserrat";
   font-weight: bold;
 }
@@ -688,20 +689,20 @@ path :focus {
   border: solid 1px #132344;
   background-color: #132344;
   color: white;
-}
-.responses .group-responses .button-bleu:hover {
-  border: solid 1px #FFA808;
-  background-color: #FFA808;
-  color: #132344;
+  pointer-events: none;
 }
 
 .div-quiz-result {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.div-quiz-result h1 {
+  text-align: center;
 }
 .div-quiz-result div {
-  display: flex;
-  flex-direction: column;
+  width: auto;
 }
 .div-quiz-result div div {
   display: flex;
@@ -710,6 +711,12 @@ path :focus {
 .div-quiz-result div div img {
   width: 60px;
   height: auto;
+  margin-left: 10px;
+  margin-right: 30px;
+}
+.div-quiz-result div hr {
+  width: 50%;
+  margin-left: 0;
 }
 .div-quiz-result button {
   cursor: pointer;
@@ -722,8 +729,4 @@ path :focus {
   font-weight: bold;
   font-size: 20px;
   color: white;
-}
-
-body {
-  background-color: rgb(207, 221, 248);
 }/*# sourceMappingURL=styles.css.map */

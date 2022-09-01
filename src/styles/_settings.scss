@@ -1,8 +1,9 @@
 $font: 'Montserrat';
 $color-font:#132344;
 $background: #FFA808;
- 
-body {
+
+html, body {
+	background-color: rgb(207, 221, 248) ;
 	font-family: 'Montserrat';
     font-weight: bold;
 }
