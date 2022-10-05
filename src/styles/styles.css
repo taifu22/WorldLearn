@@ -149,7 +149,39 @@ html, body {
   height: 50px;
   margin-left: 20px;
 }
+.div-header .header-nav-responsive {
+  display: none;
+}
+.div-header .header-nav {
+  display: block;
+}
 
+@media screen and (max-width: 375px) {
+  .div-header {
+    height: 80px;
+    width: 100%;
+    background-color: #FFA808;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .div-header .header-nav {
+    display: none;
+  }
+  .div-header .header-nav-responsive {
+    display: flex;
+    margin-right: 25px;
+  }
+  .div-header .header-nav-responsive .fa-bars {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+  }
+  .div-header img {
+    height: 30px;
+    margin-left: 20px;
+  }
+}
 .div-foter {
   height: 100px;
   width: 100%;
@@ -167,7 +199,7 @@ html, body {
   margin-top: 5px;
   margin-right: 50px;
 }
-.ul-nav li {
+.ul-nav .p-nav {
   margin-right: 20px;
   list-style: none;
   font-family: "Montserrat";
@@ -176,7 +208,19 @@ html, body {
 }
 
 @media screen and (max-width: 375px) {
-  li {
+  .ul-nav {
+    padding: 0;
+    background-color: #FFA808;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: -187px;
+    margin-top: 153px;
+    width: 359px;
+    z-index: 1;
+  }
+  .p-nav {
     font-size: 12px;
     margin: 5px;
     text-transform: uppercase;
@@ -270,7 +314,7 @@ html, body {
           animation: myAnimHome 1s ease 0s 1 normal forwards;
   display: flex;
   flex-direction: column;
-  height: 520px;
+  height: 440px;
   font-family: "Montserrat";
   color: #132344;
 }
@@ -284,18 +328,15 @@ html, body {
   align-items: center;
 }
 .div-home .div-container div h1 {
-  width: 45%;
+  width: 340px;
   text-align: center;
+  font-size: 30px;
 }
 .div-home .div-container div img {
-  width: 500px;
-  height: 250px;
+  width: 380px;
+  height: 180px;
 }
-.div-home .div-button {
-  display: flex;
-  justify-content: space-around;
-}
-.div-home .div-button button {
+.div-home .div-container div button {
   background-color: #132344;
   color: white;
   width: 150px;
@@ -307,6 +348,39 @@ html, body {
   margin-top: 40px;
 }
 
+@media screen and (max-width: 375px) {
+  .div-home {
+    display: flex;
+    flex-direction: row;
+    height: 480px;
+  }
+  .div-home .div-container {
+    flex-direction: column;
+  }
+  .div-home .div-container div {
+    overflow: scroll;
+    width: 100%;
+  }
+  .div-home .div-container div h1 {
+    width: 100%;
+    font-size: 20px;
+  }
+  .div-home .div-container div img {
+    width: 200px;
+    height: 105px;
+  }
+  .div-home .div-container div button {
+    background-color: #132344;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+}
 .div-quiz-container {
   -webkit-animation: myAnimQuiz 1s ease 0s 1 normal forwards;
           animation: myAnimQuiz 1s ease 0s 1 normal forwards;
@@ -359,24 +433,20 @@ html, body {
 }
 
 .page-worldmap {
-  height: 500px;
+  height: 490px;
   -webkit-animation: myAnim1 1.5s ease 0s 1 normal forwards;
           animation: myAnim1 1.5s ease 0s 1 normal forwards;
 }
 .page-worldmap .world-map {
   display: flex;
   justify-content: center;
+  margin-top: -40px;
   height: 500px;
   overflow: hidden;
 }
 .page-worldmap .world-map svg {
   height: 600px;
   width: 100%;
-}
-.page-worldmap img {
-  height: 40px;
-  width: auto;
-  border: solid black 1px;
 }
 
 path :focus {
@@ -386,62 +456,145 @@ path :focus {
   outline-color: green;
 }
 
+@media screen and (max-width: 375px) {
+  .page-worldmap {
+    height: 460px;
+  }
+  .page-worldmap .world-map {
+    margin-top: 10px;
+    height: 400px;
+    margin-right: 30px;
+  }
+  .page-worldmap .world-map svg {
+    height: 500px;
+  }
+}
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: -200px;
+  left: -100px;
+  width: 105vw;
+  height: 111vh;
   z-index: 1040;
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-animation: myAnimHome 1s ease 0s 1 normal forwards;
           animation: myAnimHome 1s ease 0s 1 normal forwards;
 }
-
-.modal-overlay1 {
+.modal-overlay .modal-wrapper {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1040;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-animation: myAnimHome1 1s ease 0s 1 normal forwards;
-          animation: myAnimHome1 1s ease 0s 1 normal forwards;
-}
-
-.modal-wrapper {
-  position: fixed;
-  top: 0;
+  top: -100px;
   left: 0;
   z-index: 1050;
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
   display: flex;
   align-items: center;
 }
-
-.modal {
+.modal-overlay .modal-wrapper .modal {
   z-index: 100;
   background: #fff;
   position: relative;
   margin: auto;
+  margin-top: -10px;
   border-radius: 5px;
-  max-width: 500px;
-  width: 80%;
+  max-width: 80%;
   padding: 1rem;
 }
-.modal .flag-modal {
-  width: 60px;
-}
-
-.modal-header {
+.modal-overlay .modal-wrapper .modal .modal-header {
   display: flex;
   justify-content: space-between;
+}
+.modal-overlay .modal-wrapper .modal .modal-header div {
+  display: flex;
   align-items: center;
+}
+.modal-overlay .modal-wrapper .modal .modal-header div h2 {
+  margin-right: 10px;
+  color: #132344;
+}
+.modal-overlay .modal-wrapper .modal .modal-header .flag-modal {
+  width: 60px;
+  border: 1px rgb(0, 0, 0) solid;
+}
+.modal-overlay .modal-wrapper .modal .modal-body {
+  display: flex;
+}
+.modal-overlay .modal-wrapper .modal .modal-body .img-map {
+  max-height: 450px !important;
+}
+.modal-overlay .modal-wrapper .modal .modal-body .body-country-info {
+  background-color: rgb(235, 226, 226);
+  padding: 30px;
+}
+.modal-overlay .modal-wrapper .modal .modal-body .body-country-info span {
+  color: rgb(48, 84, 139);
+}
+
+.modal-worldmap {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 105vw;
+  height: 104vh;
+  z-index: 1040;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-animation: myAnimHome 1s ease 0s 1 normal forwards;
+          animation: myAnimHome 1s ease 0s 1 normal forwards;
+}
+.modal-worldmap .modal-wrapper {
+  position: fixed;
+  top: -20px;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  display: flex;
+  align-items: center;
+}
+.modal-worldmap .modal-wrapper .modal {
+  z-index: 100;
+  background: #fff;
+  position: relative;
+  margin: auto;
+  margin-top: -10px;
+  border-radius: 5px;
+  max-width: 80%;
+  padding: 1rem;
+}
+.modal-worldmap .modal-wrapper .modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-worldmap .modal-wrapper .modal .modal-header div {
+  display: flex;
+  align-items: center;
+}
+.modal-worldmap .modal-wrapper .modal .modal-header div h2 {
+  margin-right: 10px;
+  color: #132344;
+}
+.modal-worldmap .modal-wrapper .modal .modal-header .flag-modal {
+  width: 60px;
+  border: 1px rgb(0, 0, 0) solid;
+}
+.modal-worldmap .modal-wrapper .modal .modal-body {
+  display: flex;
+}
+.modal-worldmap .modal-wrapper .modal .modal-body .img-map {
+  max-height: 450px !important;
+}
+.modal-worldmap .modal-wrapper .modal .modal-body .body-country-info {
+  background-color: rgb(235, 226, 226);
+  padding: 30px;
+}
+.modal-worldmap .modal-wrapper .modal .modal-body .body-country-info span {
+  color: rgb(48, 84, 139);
 }
 
 .modal-close-button {
@@ -453,6 +606,18 @@ path :focus {
   background: transparent;
 }
 
+@media screen and (max-width: 375px) {
+  .modal {
+    height: 500px;
+    overflow: scroll;
+  }
+  .modal .modal-body {
+    flex-direction: column;
+  }
+  .modal .modal-body img {
+    max-height: 400px;
+  }
+}
 .div-flag-component {
   font-family: "Montserrat";
   font-weight: bold;
@@ -473,8 +638,11 @@ path :focus {
   width: auto;
   border-radius: 10px;
 }
-.div-flag-component .div-flag-container img {
+.div-flag-component .div-flag-container .img-flag-component {
   margin-left: 10px;
+  height: 40px;
+  width: auto;
+  border: solid black 1px;
 }
 .div-flag-component i {
   color: #132344;
@@ -551,7 +719,7 @@ path :focus {
   font-family: "Montserrat";
   font-weight: bold;
   margin: 20px;
-  height: 480px;
+  height: 400px;
   width: auto;
 }
 .div-listofpays .div-world {
@@ -570,6 +738,9 @@ path :focus {
 .div-listofpays .div-world .p-world i {
   margin-left: 20px;
   font-size: 100px;
+}
+.div-listofpays .div-world .p-world-none {
+  display: none;
 }
 .div-listofpays .div-continents {
   -webkit-animation: myAnim1 1s ease 0s 1 normal forwards;
@@ -590,13 +761,49 @@ path :focus {
 .div-listofpays .div-continents .p-continent {
   display: flex;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 .div-listofpays .div-continents .p-continent i {
   margin-left: 20px;
   font-size: 100px;
 }
+.div-listofpays .div-continents .p-continent-none {
+  display: none;
+}
 
+@media screen and (max-width: 375px) {
+  .div-listofpays {
+    height: 430px;
+  }
+  .div-listofpays .div-world {
+    flex-direction: column;
+  }
+  .div-listofpays .div-world .img-world-list {
+    -webkit-animation: myAnim 1s ease 0s 1 normal forwards;
+            animation: myAnim 1s ease 0s 1 normal forwards;
+    width: auto;
+    height: 200px;
+  }
+  .div-listofpays .div-world .img-world-list-none {
+    display: none;
+  }
+  .div-listofpays .div-world .dropdown-world {
+    -webkit-animation: myAnim 1s ease 0s 1 normal forwards;
+            animation: myAnim 1s ease 0s 1 normal forwards;
+  }
+  .div-listofpays .p-world {
+    top: 335px;
+    height: 50px;
+    position: absolute;
+  }
+  .div-listofpays .p-world i {
+    margin-left: 10px;
+    font-size: 50px;
+  }
+  .div-listofpays .p-world-none {
+    display: none;
+  }
+}
 .div-quizCapitales {
   margin: 100px;
   display: flex;

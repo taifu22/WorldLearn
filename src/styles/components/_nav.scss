@@ -2,20 +2,31 @@
     display: flex;
     margin-top: 5px;
     margin-right: 50px;
-    li {
+    .p-nav {
         margin-right: 20px;
         list-style: none;
         font-family: 'Montserrat';
         font-weight: bold;
-        margin-left: 20px;
+        margin-left: 20px; 
     }
 }
 
-
 @media screen and (max-width: 375px){
-    li{
-       font-size: 12px;
-       margin: 5px;
-       text-transform: uppercase;
+    .ul-nav {
+        padding: 0;
+        background-color: $background;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+        margin-left: -187px;
+        margin-top: 153px;
+        width: 359px;
+        z-index: 1;
+    }
+    .p-nav{ 
+        font-size: 12px;
+        margin: 5px;
+        text-transform: uppercase;
     }
 }

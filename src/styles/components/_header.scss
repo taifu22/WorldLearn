@@ -8,5 +8,38 @@
     img {
         height: 50px;
         margin-left: 20px;
+    } 
+    .header-nav-responsive {
+        display: none;
+    } 
+    .header-nav {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .div-header {
+        height: 80px;
+        width: 100%;
+        background-color: $background;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .header-nav {
+            display: none; 
+        }
+        .header-nav-responsive {
+            display: flex;
+            margin-right: 25px;
+            .fa-bars {
+                position: absolute;
+                top: 40px;
+                right: 50px;
+            }
+        }
+        img {
+            height: 30px;
+            margin-left: 20px;
+        }
     }
 }

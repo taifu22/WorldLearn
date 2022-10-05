@@ -14,20 +14,23 @@ const WorldMap = () => {
   const {isShowing: isInfoShowed, toggle: toggleInfo} = useModal();
   const [dataPays, setDataPays] = useState();
   const [dataPaysinfo, setDataPaysInfo] = useState();
-  const [dataPaysinfo1, setDataPaysInfo1] = useState();
+  const [dataPaysinfo1, setDataPaysInfo1] = useState(); 
   const [namePays, setnamePays] = useState();
   const [flagPays, setFlagPays] = useState();
   const [clientXState, setclientXState] = useState();
   const [clientYState, setclientYState] = useState();
+  const [togglePageWorldMap, setTogglePageWorldMap] = useState(false)
 
   function handleClick(data) {
     toggleInfo()
     setDataPays(data)
+    setTogglePageWorldMap(!togglePageWorldMap);
     dataPaysinfo.find(item => {
       if (item.cca3 === data.id) {
         setDataPaysInfo1(item)
       }
     })
+    console.log(togglePageWorldMap);
   }
 
   useEffect(() => {
@@ -87,7 +90,7 @@ const WorldMap = () => {
         </ZoomableGroup>
       </ComposableMap>
       {isInfoShowed && dataPays && dataPaysinfo && dataPaysinfo1 && 
-      <ModaleInfo id={dataPays.id} title={dataPays.properties.name} languages={dataPaysinfo1.languages} hide={toggleInfo} show={isInfoShowed}/>}
+        <ModaleInfo toggle={togglePageWorldMap} dataAll={dataPaysinfo} dataPays={dataPaysinfo1} id={dataPays.id} title={dataPays.properties.name} languages={dataPaysinfo1.languages} hide={() =>{toggleInfo(); setTogglePageWorldMap(!togglePageWorldMap)}} show={isInfoShowed}/>}
     </div>
   );
 };

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import WorldMap from "../components/WorldMap";
 
 function Pageworldmap() {
 
   return (
     <div className="page-worldmap">
-      <WorldMap></WorldMap>
+      <WorldMap></WorldMap> 
     </div>
   );
 };

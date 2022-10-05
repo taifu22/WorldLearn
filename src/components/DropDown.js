@@ -11,7 +11,7 @@ function DropDown(props) {
     const [dataPaysinfo1, setDataPaysInfo1] = useState();
 
     function handleDropdown() {
-        props.func();
+        props.func(); 
         setToggleDropdown(!toggleDropdown);
     }
 
@@ -46,7 +46,8 @@ function DropDown(props) {
                 {toggleDropdown ? <i onClick={handleDropdown} className="rotate1 fa fa-solid fa-angle-up"></i> : 
                 <i onClick={handleDropdown} className="rotate2 fa fa-solid fa-angle-down"></i>}
             </div>
-            {toggleDropdown && <div className='dropdown-body'>
+            {toggleDropdown && 
+            <div className='dropdown-body'>
                 <ul className='ul-dropdown'>
                   <input onChange={e => setValueInput(e.target.value)} type={'search'} value={valueInput} placeholder={"rentrez le nom d'un pays"}></input>
                  {props.pays.map((item, index) => {
@@ -71,7 +72,7 @@ function DropDown(props) {
                  })}
                  </ul>
             </div>}
-            {isInfoShowed && <ModaleInfo id={dataPaysinfo1.cca3} title={dataPaysinfo1.name.common} languages={dataPaysinfo1.languages} hide={toggleInfo} show={isInfoShowed}/>}
+            {isInfoShowed && <ModaleInfo dataAll={dataPaysinfo} dataPays={dataPaysinfo1} id={dataPaysinfo1.cca3} title={dataPaysinfo1.name.common} languages={dataPaysinfo1.languages} hide={toggleInfo} show={isInfoShowed}/>}
         </div> 
     );
 }

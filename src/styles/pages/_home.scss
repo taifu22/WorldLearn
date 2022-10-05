@@ -2,7 +2,7 @@
     animation: myAnimHome 1s ease 0s 1 normal forwards;
     display: flex;
     flex-direction: column;
-    height: 520px;
+    height: 440px;
     font-family: $font;
     color: $color-font;
     .div-container {
@@ -13,28 +13,60 @@
             flex-direction: column;
             align-items: center;
             h1 {
-                width: 45%; 
+                width: 340px; 
                 text-align: center;
+                font-size: 30px;
             }
             img {
-                width: 500px;
-                height: 250px;
+                width: 380px;
+                height: 180px;
+            }
+            button {
+                background-color: $color-font;
+                color: white;
+                width: 150px;
+                height: 50px;
+                border-radius: 10px;
+                font-family: $font;
+                font-weight: bold;
+                font-size: 20px;
+                margin-top: 40px;
             }
         }
     }
-    .div-button {
+}
+
+@media screen and (max-width: 375px){
+    .div-home {
         display: flex;
-        justify-content: space-around;
-        button {
-            background-color: $color-font;
-            color: white;
-            width: 150px;
-            height: 50px;
-            border-radius: 10px;
-            font-family: $font;
-            font-weight: bold;
-            font-size: 20px;
-            margin-top: 40px;
+        flex-direction: row;
+        height: 480px;
+        .div-container {
+            flex-direction: column;
+            //margin-bottom: 120px;
+            div {
+                overflow: scroll;
+                width: 100%;
+                h1 {
+                    width: 100%;
+                    font-size: 20px;
+                }
+                img {
+                    width: 200px;
+                    height: 105px;
+                }
+                button {
+                    background-color: $color-font;
+                    color: white;
+                    width: 100px;
+                    height: 30px;
+                    border-radius: 10px;
+                    font-family: $font;
+                    font-weight: bold;
+                    font-size: 15px;
+                    margin-top: 10px;
+                }
+            }
         }
     }
 }

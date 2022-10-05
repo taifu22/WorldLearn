@@ -11,7 +11,7 @@ function Listofstates(props) {
 
     const [toggleWorld, setToggleWorld] = useState(true);
     const [toggleContinent, setToggleContinent] = useState(false);
-    const [animationWorld, setAnimationWorld] = useState();
+    const [toggleP, setToggleP] = useState(false);
     const [dataPaysinfo, setDataPaysInfo] = useState();
     const [dataAfrica, setDataAfrica] = useState([]);
     const [dataAsia, setDataAsia] = useState([]);
@@ -35,20 +35,21 @@ function Listofstates(props) {
       }, [])
 
     function ArrayContinents() {
+        setToggleP(!toggleP);
         if (dataPaysinfo && !dataAfrica.length && !dataAsia.length && !dataAmericas.length && !dataEurope.length && !dataOceania.length && !dataWorld.length) {
             dataPaysinfo.map(item => {
                 if (item.region === 'Africa') {
-                    dataAfrica.push({name:item.name.common, id:item.cca3});
+                    setDataAfrica(dataAfrica => [...dataAfrica, {name:item.name.common, id:item.cca3}]);
                 } else if (item.region === 'Asia') {
-                    dataAsia.push({name:item.name.common, id:item.cca3});
+                    setDataAsia(dataAsia => [...dataAsia, {name:item.name.common, id:item.cca3}]);
                 } else if (item.region === 'Americas') {
-                    dataAmericas.push({name:item.name.common, id:item.cca3});
+                    setDataAmericas(dataAmericas => [...dataAmericas, {name:item.name.common, id:item.cca3}]);
                 } else if (item.region === 'Europe') {
-                    dataEurope.push({name:item.name.common, id:item.cca3});
+                    setDataEurope(dataEurope => [...dataEurope, {name:item.name.common, id:item.cca3}]);
                 } else if (item.region === 'Oceania') {
-                    dataOceania.push({name:item.name.common, id:item.cca3});
+                    setDataOceania(dataOceania => [...dataOceania, {name:item.name.common, id:item.cca3}]);
                 }
-                dataWorld.push({name:item.name.common, id:item.cca3});
+                setDataWorld(dataWorld => [...dataWorld, {name:item.name.common, id:item.cca3}]);
             })
         } 
     }
@@ -60,10 +61,10 @@ function Listofstates(props) {
 
     return dataPaysinfo && (
         <div className='div-listofpays'>
-            {toggleWorld && <div className={toggleWorld ? 'div-world' : 'div-world1'}>
+            {toggleWorld && <div className='div-world'>
                  <img src={World}></img>
                  <DropDown title={'World States'} pays={dataWorld} func={ArrayContinents}/>
-                 <p className='p-world'>
+                 <p className={toggleP ? 'p-world-none' : 'p-world'}>
                     Passer à la liste des pays par continents
                     <i onClick={handleWorld} className="fa fa-solid fa-chevron-right"></i>
                 </p>
@@ -83,7 +84,7 @@ function Listofstates(props) {
                     <DropDown title={'Europe'} pays={dataEurope} func={ArrayContinents}/>
                     <DropDown title={'Oceania'} pays={dataOceania} func={ArrayContinents}/>
                 </div>
-                <p className='p-continent'>
+                <p className={toggleP ? 'p-continent-none' : 'p-continent'}>
                     <i onClick={handleWorld} className="fa fa-solid fa-chevron-left"></i>
                     Passer à la recherche des pays classique
                 </p>

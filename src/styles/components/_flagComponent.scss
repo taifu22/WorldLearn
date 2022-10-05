@@ -13,11 +13,14 @@
         background-color: $color-font;
         opacity: .9;
         color: white;
-        height: 50px;
+        height: 50px; 
         width: auto;
         border-radius: 10px; 
-        img {
-            margin-left: 10px
+        .img-flag-component {
+            margin-left: 10px;
+            height: 40px;
+            width: auto;
+            border: solid black 1px;
         }
     }
     i {

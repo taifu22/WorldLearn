@@ -2,7 +2,7 @@
     font-family: 'Montserrat';
     font-weight: bold;
     margin: 20px;
-    height: 480px;
+    height: 400px;
     width: auto;
     .div-world {
         display: flex;
@@ -19,6 +19,9 @@
                 font-size: 100px;
             }
         }
+        .p-world-none {
+            display: none;
+        }
     }
     .div-continents {
         animation: myAnim1 1s ease 0s 1 normal forwards;
@@ -26,7 +29,7 @@
             display: flex;
             justify-content: space-between;
             img {
-                height: 200px;
+                height: 200px;  
                 width: auto;
             }
         }
@@ -37,11 +40,46 @@
         .p-continent {
             display: flex;
             align-items: center;
-            margin-top: 60px;
+            margin-top: 40px;
             i {
                 margin-left: 20px;
                 font-size: 100px;
             }
+        }
+        .p-continent-none {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 375px){
+    .div-listofpays {
+        height: 430px;
+        .div-world {
+            flex-direction: column;
+            .img-world-list {
+                animation: myAnim 1s ease 0s 1 normal forwards;
+                width: auto;
+                height: 200px;
+            }
+            .img-world-list-none{
+                display: none;
+            }
+            .dropdown-world {
+                animation: myAnim 1s ease 0s 1 normal forwards;
+            }
+        }
+        .p-world {
+            top: 335px;
+            height: 50px;
+            position: absolute;
+            i {
+                margin-left: 10px;
+                font-size: 50px;
+            }
+        }
+        .p-world-none {
+            display: none;
         }
     }
 }
