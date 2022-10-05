@@ -72,23 +72,29 @@ function Listofstates(props) {
             {toggleContinent && <div className='div-continents'>
                 <div className='continents'>
                     <img src={Africa}></img>
-                    <img src={Asia}></img>
-                    <img src={Americas}></img>
-                    <img src={Europe}></img>
-                    <img src={Oceania}></img>
-                </div>
-                <div className='list-dropdown'>
                     <DropDown title={'Africa'} pays={dataAfrica} func={ArrayContinents}/>
+                </div>
+                <div className='continents'>
+                    <img src={Asia}></img>
                     <DropDown title={'Asia'} pays={dataAsia} func={ArrayContinents}/>
+                </div>
+                <div className='continents'>
+                    <img src={Americas}></img>
                     <DropDown title={'Americas'} pays={dataAmericas} func={ArrayContinents}/>
+                </div>
+                <div className='continents'>
+                    <img src={Europe}></img>
                     <DropDown title={'Europe'} pays={dataEurope} func={ArrayContinents}/>
+                </div>
+                <div className='continents'>
+                    <img src={Oceania}></img>
                     <DropDown title={'Oceania'} pays={dataOceania} func={ArrayContinents}/>
                 </div>
-                <p className={toggleP ? 'p-continent-none' : 'p-continent'}>
+            </div>}
+            {toggleContinent && <p className={toggleP ? 'p-continent-none' : 'p-continent'}>
                     <i onClick={handleWorld} className="fa fa-solid fa-chevron-left"></i>
                     Passer à la recherche des pays classique
-                </p>
-            </div>}
+            </p>}
         </div>
     );
 }

@@ -24,31 +24,30 @@
         }
     }
     .div-continents {
+        display: flex;
+        justify-content: space-between;
         animation: myAnim1 1s ease 0s 1 normal forwards;
         .continents {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            width: 300px;
             img {
                 height: 200px;  
                 width: auto;
             }
         }
-        .list-dropdown {
-            display: flex;
-            justify-content: space-between;
+    }
+    .p-continent {
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+        i {
+            margin-left: 20px;
+            font-size: 100px;
         }
-        .p-continent {
-            display: flex;
-            align-items: center;
-            margin-top: 40px;
-            i {
-                margin-left: 20px;
-                font-size: 100px;
-            }
-        }
-        .p-continent-none {
-            display: none;
-        }
+    }
+    .p-continent-none {
+        display: none;
     }
 }
 

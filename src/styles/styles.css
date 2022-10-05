@@ -743,31 +743,30 @@ path :focus {
   display: none;
 }
 .div-listofpays .div-continents {
+  display: flex;
+  justify-content: space-between;
   -webkit-animation: myAnim1 1s ease 0s 1 normal forwards;
           animation: myAnim1 1s ease 0s 1 normal forwards;
 }
 .div-listofpays .div-continents .continents {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 300px;
 }
 .div-listofpays .div-continents .continents img {
   height: 200px;
   width: auto;
 }
-.div-listofpays .div-continents .list-dropdown {
-  display: flex;
-  justify-content: space-between;
-}
-.div-listofpays .div-continents .p-continent {
+.div-listofpays .p-continent {
   display: flex;
   align-items: center;
   margin-top: 40px;
 }
-.div-listofpays .div-continents .p-continent i {
+.div-listofpays .p-continent i {
   margin-left: 20px;
   font-size: 100px;
 }
-.div-listofpays .div-continents .p-continent-none {
+.div-listofpays .p-continent-none {
   display: none;
 }
 
