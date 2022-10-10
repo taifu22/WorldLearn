@@ -30,7 +30,7 @@ const WorldMap = () => {
         setDataPaysInfo1(item)
       }
     })
-    console.log(togglePageWorldMap);
+    console.log(data);
   }
 
   useEffect(() => {
@@ -69,9 +69,11 @@ const WorldMap = () => {
                     setFlagPays('');
                   }}
                   onClick={() => handleClick(geo)}
+                  outline='none'
+                  fill={geo.properties.color ? geo.properties.color : 'red'}
                   style={{
                     default: {
-                      //fill: "#D6D6DA",
+                      //background: geo.properties.color ? geo.properties.color : 'red',
                     //  outline: "none"
                     },
                     hover: {

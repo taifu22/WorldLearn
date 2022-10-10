@@ -22,7 +22,7 @@ function ModaleInfo(props) {
                     className="modal-close-button"
                     onClick={() => {props.hide()}}
                   >
-                  <span>&times;</span> 
+                  <span>&times;</span>  
                   </button>
                 </div>
                 <div className="modal-body">

@@ -1,8 +1,8 @@
 .div-quizCapitales {
-    margin: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 440px;
     img {
         width: 100px;
     }
@@ -16,8 +16,7 @@
         button {
             @include button;
             width: auto;
-            margin: 18px;
-            
+            margin: 18px;  
         }
         .hover-button {
             &:hover{
@@ -33,6 +32,22 @@
         }
         p {
             margin-top: -40px;
+        }
+    }
+} 
+
+@media screen and (max-width: 375px){
+    .div-quizCapitales {
+        margin: 10px;
+        height: 450px;
+        h1 {
+            font-size: 22px;
+            text-align: center;
+        }
+        .header-quiz {
+            button {
+                font-size: 15px;
+            }
         }
     }
 }

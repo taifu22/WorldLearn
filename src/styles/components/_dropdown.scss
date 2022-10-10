@@ -24,7 +24,7 @@
     }
     .dropdown-body {
         width: auto;
-        height: 200px;
+        height: 300px;
         border-radius: 5px;
         background-color: white;
         padding: 8px;
@@ -58,5 +58,18 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 375px){
+    .dropdown {
+        .dropdown-body {
+            height: 400px;
+        }
+    }
+    .dropdown-margin {
+        position: static !important;
+       margin-top: 100px;
+       width: 100% !important;
     }
 }

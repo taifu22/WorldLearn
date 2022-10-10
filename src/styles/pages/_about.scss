@@ -1,7 +1,7 @@
 .div-about {
     display: flex;
     position: relative;
-    height: 500px;
+    height: 440px;
     font-family: $font;
     animation: myAnimHome 1s ease 0s 1 normal forwards;
     .container-text {
@@ -29,4 +29,29 @@
         margin-top: 110px;
         margin-left: -45px;
     }
-}
+} 
+
+@media screen and (max-width: 375px){
+    .div-about {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 470px;
+        .container-text {
+            margin: 0;
+            margin-top: 50px;
+            width: 80%;
+            font-size: 9px;
+            p {
+                margin-top: 10px;
+            }
+        }
+        img {
+            margin-top: -20px;
+            margin-bottom: 50px;
+            margin-left: 0px;
+            width: 60%;
+            height: 40%;
+        }
+    }
+} 

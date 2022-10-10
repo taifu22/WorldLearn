@@ -24,23 +24,16 @@
         }
     }
     .div-continents {
-        display: flex;
-        justify-content: space-between;
         animation: myAnim1 1s ease 0s 1 normal forwards;
-        .continents {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            img {
-                height: 200px;  
-                width: auto;
-            }
-        }
     }
     .p-continent {
         display: flex;
         align-items: center;
-        margin-top: 40px;
+        overflow: hidden;
+        //margin-top: 50px;
+        z-index: 1;
+        position: absolute;
+        top: 420px;
         i {
             margin-left: 20px;
             font-size: 100px;
@@ -51,7 +44,7 @@
     }
 }
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 375px){ 
     .div-listofpays {
         height: 430px;
         .div-world {
@@ -79,6 +72,22 @@
         }
         .p-world-none {
             display: none;
+        }
+        .div-continents {
+            width: 350px;
+            margin-top: 45px;
+        }
+        .p-continent {
+            margin-top: -30px;
+            top: 490px;
+            left: -20px;
+            i {
+                margin-right: 20px;
+                font-size: 100px;
+            }
+        }
+        .p-continent-none {
+            display: none;  
         }
     }
 }

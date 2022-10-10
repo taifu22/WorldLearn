@@ -49,7 +49,7 @@ function QuizDrapeaux(props) {
         //randomNumberscChoicie(4);
         randomNumberscChoicie();
         setInfoPays({flag:"", arraypays:""});
-        let arrayrandom = Object.keys([...new Array(244)]).sort( ()=>Math.random()-0.5 );
+        let arrayrandom = Object.keys([...new Array(199)]).sort( ()=>Math.random()-0.5 );
         let randomNumber = arrayrandom.pop();
         let randomNumber1 = arrayrandom.pop();
         let randomNumber2 = arrayrandom.pop();
@@ -61,6 +61,10 @@ function QuizDrapeaux(props) {
             })
         }
         
+        if (arrayNamePays) {
+            console.log(arrayNamePays);
+        }
+
         setInfoPays(infoPays => ({...infoPays,flag:`/data/${arrayNamePays[randomNumber].id}.svg`}));
 
         setInfoPays(infoPays => ({...infoPays,arraypays:[...infoPays.arraypays, 0]}))

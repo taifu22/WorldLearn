@@ -10,7 +10,7 @@
         justify-content: space-around;
         margin:50px;
         margin-bottom: -30px;
-        button {
+        button { 
             @include button
         }
         .hover-button-responses { 
@@ -18,7 +18,7 @@
                 border: solid 1px $background;
                 background-color: $background;
                 color: $color-font;
-            }
+            } 
         }
         .button-yellow {
             border: solid 1px $background;
@@ -45,6 +45,22 @@
             //     background-color: $background;
             //     color: $color-font;
             // }
+        }
+    }
+} 
+
+@media screen and (max-width: 375px){
+    .quiz-body {
+
+    }
+    .responses {
+        .group-responses {
+           margin-left: 0;
+           margin-right: 0;
+           button {
+            width: 150px;
+            font-size: 15px;
+           }
         }
     }
 }

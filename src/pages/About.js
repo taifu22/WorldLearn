@@ -14,7 +14,7 @@ function About() {
                  Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
                  including versions of Lorem Ipsum.</p>
             </div>
-            <img src={imgCarte}></img>
+            <img src={imgCarte}></img> 
         </div>
     );
 }

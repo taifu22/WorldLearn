@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Quiz(props) {
     return (
         <div className='div-quiz-container'>
-            <h1>Choisissez votre quiz</h1>
+            
             <div className='div-quiz'>
                 <div className='quiz-capitales'>
                     <h2>Quiz avec les capitales du monde</h2>

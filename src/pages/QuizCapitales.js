@@ -1,6 +1,7 @@
 import React, { useEffect, useState }from 'react';
 import QuizComponent from '../components/QuizComponent';
 import QuizResult from './QuizResult';
+import { Link } from 'react-router-dom';
 
 function QuizCapitales(props) {
 
@@ -8,7 +9,7 @@ function QuizCapitales(props) {
     const [toggleLength, setToggleLength] = useState(false);
     let [count, setCount] = useState(1);
     let [countResponses, setCountResponses] = useState(0);
-    let [timer10, setTimer10] = useState(100);
+    let [timer10, setTimer10] = useState(10);
     let [timer15, setTimer15] = useState(150);
     let [timer30, setTimer30] = useState(300);
     const [arrayCapitales, setArrayCapitales] = useState([]);
@@ -49,7 +50,7 @@ function QuizCapitales(props) {
     function StartQuiz() {
         randomNumberscChoicie()
         setInfoPays({flag:"",name:"",capital:[]});
-        let arrayrandom = Object.keys([...new Array(244)]).sort( ()=>Math.random()-0.5 );
+        let arrayrandom = Object.keys([...new Array(199)]).sort( ()=>Math.random()-0.5 );
         let randomNumber = arrayrandom.pop();
         let randomNumber1 = arrayrandom.pop();
         let randomNumber2 = arrayrandom.pop();
@@ -151,7 +152,7 @@ function QuizCapitales(props) {
                 <button onClick={()=>{setToggle15Responses(true);setToggle10Responses(false);setToggle30Responses(false)}} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>15 questions et 2 minute 30 de temps</button>
                 <button onClick={()=>{setToggle30Responses(true);setToggle15Responses(false);setToggle10Responses(false)}} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>30 questions et 4 minute 20 de temps</button>
                 <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{setToggleLength(!toggleLength);startTimer();StartQuiz();}}>Demarrer le quiz</button>
-                <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>NextQuiz()}>Restart new quiz</button>
+                <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}}><Link style={{color:'white' , textDecoration:'none'}} to="/quiz">Quitter le quiz</Link></button>
                 <p style={toggleLength ? {display:'block'} : {display:'none'}}>timer {toggle10Responses ? Math.floor(timer10/60)+":"+timer10%60 : toggle15Responses ? Math.floor(timer15/60)+":"+timer15%60 : toggle30Responses ? Math.floor(timer30/60)+":"+timer30%60 : ""}</p>
                 <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>{setgreen(true);setbleu(false);NextQuiz()}}>Question suivante</button>
             </div>

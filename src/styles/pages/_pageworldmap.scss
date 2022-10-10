@@ -1,22 +1,16 @@
 .page-worldmap {
-   height: 490px;
+   height: 440px;
    animation: myAnim1 1.5s ease 0s 1 normal forwards;
    .world-map{
       display: flex;
       justify-content: center;
-      margin-top: -40px;
-      height: 500px;
+      height: 440px;
       overflow: hidden;
       svg{
-         height: 600px;
+         height: 500px;
          width: 100%;
       }
    }
-   // img {
-   //    height: 40px;
-   //    width: auto;
-   //    border: solid black 1px;
-   // }
 }
 
 path{ 

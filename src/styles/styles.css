@@ -229,7 +229,7 @@ html, body {
 .div-about {
   display: flex;
   position: relative;
-  height: 500px;
+  height: 440px;
   font-family: "Montserrat";
   -webkit-animation: myAnimHome 1s ease 0s 1 normal forwards;
           animation: myAnimHome 1s ease 0s 1 normal forwards;
@@ -260,6 +260,30 @@ html, body {
   margin-left: -45px;
 }
 
+@media screen and (max-width: 375px) {
+  .div-about {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 470px;
+  }
+  .div-about .container-text {
+    margin: 0;
+    margin-top: 50px;
+    width: 80%;
+    font-size: 9px;
+  }
+  .div-about .container-text p {
+    margin-top: 10px;
+  }
+  .div-about img {
+    margin-top: -20px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+    width: 60%;
+    height: 40%;
+  }
+}
 .erreur-404 {
   display: flex;
   flex-direction: column;
@@ -358,7 +382,7 @@ html, body {
     flex-direction: column;
   }
   .div-home .div-container div {
-    overflow: scroll;
+    margin-top: 15px;
     width: 100%;
   }
   .div-home .div-container div h1 {
@@ -374,7 +398,7 @@ html, body {
     color: white;
     width: 100px;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: "Montserrat";
     font-weight: bold;
     font-size: 15px;
@@ -386,9 +410,10 @@ html, body {
           animation: myAnimQuiz 1s ease 0s 1 normal forwards;
   color: #132344;
   text-align: center;
-  height: 490px;
+  height: 390px;
 }
 .div-quiz-container .div-quiz {
+  margin-top: 45px;
   display: flex;
 }
 .div-quiz-container .div-quiz img {
@@ -426,6 +451,36 @@ html, body {
   justify-content: center;
 }
 
+@media screen and (max-width: 375px) {
+  .div-quiz-container h1 {
+    display: none;
+  }
+  .div-quiz-container .div-quiz {
+    display: block !important;
+  }
+  .div-quiz-container .div-quiz h2 {
+    font-size: 20px;
+  }
+  .div-quiz-container .div-quiz img {
+    width: 200px;
+    height: 105px;
+  }
+  .div-quiz-container .div-quiz button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  .div-quiz-container .div-quiz .quiz-capitales {
+    width: 100% !important;
+    margin-top: 25px;
+  }
+  .div-quiz-container .div-quiz .quiz-drapeaux {
+    width: 100% !important;
+    margin-top: 25px;
+  }
+}
 .window-info {
   height: 10px;
   width: auto;
@@ -433,19 +488,18 @@ html, body {
 }
 
 .page-worldmap {
-  height: 490px;
+  height: 440px;
   -webkit-animation: myAnim1 1.5s ease 0s 1 normal forwards;
           animation: myAnim1 1.5s ease 0s 1 normal forwards;
 }
 .page-worldmap .world-map {
   display: flex;
   justify-content: center;
-  margin-top: -40px;
-  height: 500px;
+  height: 440px;
   overflow: hidden;
 }
 .page-worldmap .world-map svg {
-  height: 600px;
+  height: 500px;
   width: 100%;
 }
 
@@ -679,7 +733,7 @@ path :focus {
 }
 .dropdown .dropdown-body {
   width: auto;
-  height: 200px;
+  height: 300px;
   border-radius: 5px;
   background-color: white;
   padding: 8px;
@@ -715,6 +769,16 @@ path :focus {
   height: auto;
 }
 
+@media screen and (max-width: 375px) {
+  .dropdown .dropdown-body {
+    height: 400px;
+  }
+  .dropdown-margin {
+    position: static !important;
+    margin-top: 100px;
+    width: 100% !important;
+  }
+}
 .div-listofpays {
   font-family: "Montserrat";
   font-weight: bold;
@@ -743,24 +807,16 @@ path :focus {
   display: none;
 }
 .div-listofpays .div-continents {
-  display: flex;
-  justify-content: space-between;
   -webkit-animation: myAnim1 1s ease 0s 1 normal forwards;
           animation: myAnim1 1s ease 0s 1 normal forwards;
-}
-.div-listofpays .div-continents .continents {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
-.div-listofpays .div-continents .continents img {
-  height: 200px;
-  width: auto;
 }
 .div-listofpays .p-continent {
   display: flex;
   align-items: center;
-  margin-top: 40px;
+  overflow: hidden;
+  z-index: 1;
+  position: absolute;
+  top: 420px;
 }
 .div-listofpays .p-continent i {
   margin-left: 20px;
@@ -802,12 +858,28 @@ path :focus {
   .div-listofpays .p-world-none {
     display: none;
   }
+  .div-listofpays .div-continents {
+    width: 350px;
+    margin-top: 45px;
+  }
+  .div-listofpays .p-continent {
+    margin-top: -30px;
+    top: 490px;
+    left: -20px;
+  }
+  .div-listofpays .p-continent i {
+    margin-right: 20px;
+    font-size: 100px;
+  }
+  .div-listofpays .p-continent-none {
+    display: none;
+  }
 }
 .div-quizCapitales {
-  margin: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 440px;
 }
 .div-quizCapitales img {
   width: 100px;
@@ -847,6 +919,19 @@ path :focus {
   margin-top: -40px;
 }
 
+@media screen and (max-width: 375px) {
+  .div-quizCapitales {
+    margin: 10px;
+    height: 450px;
+  }
+  .div-quizCapitales h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+  .div-quizCapitales .header-quiz button {
+    font-size: 15px;
+  }
+}
 .quiz-body {
   display: flex;
   flex-direction: column;
@@ -898,10 +983,19 @@ path :focus {
   pointer-events: none;
 }
 
+@media screen and (max-width: 375px) {
+  .responses .group-responses {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .responses .group-responses button {
+    width: 150px;
+    font-size: 15px;
+  }
+}
 .div-quiz-result {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
 }
 .div-quiz-result h1 {
@@ -935,4 +1029,68 @@ path :focus {
   font-weight: bold;
   font-size: 20px;
   color: white;
+  width: 300px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 375px) {
+  .div-quiz-result h1 {
+    font-size: 19px;
+  }
+  .div-quiz-result div div .p-none {
+    display: none;
+  }
+  .div-quiz-result button {
+    width: auto;
+    font-size: 15px;
+  }
+}
+.div-lightbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
+}
+.div-lightbox .icon {
+  font-size: 100px;
+  width: 15%;
+  display: flex;
+}
+.div-lightbox .icon2 {
+  justify-content: flex-end;
+}
+.div-lightbox .continents {
+  margin-top: -100px;
+  width: 80%;
+  display: flex;
+  z-index: 0;
+}
+.div-lightbox .continents .image-lightbox {
+  max-height: 300px;
+}
+.div-lightbox .continents .dropdown-margin-notoggle {
+  width: 100%;
+}
+.div-lightbox .continents .dropdown-margin {
+  position: absolute;
+  width: 50%;
+  right: 50px;
+  top: 5px;
+}
+
+@media screen and (max-width: 375px) {
+  .div-lightbox {
+    margin-right: 20px;
+    margin-left: -10px;
+  }
+  .div-lightbox .icon {
+    font-size: 40px;
+  }
+  .div-lightbox .continents {
+    flex-direction: column;
+  }
+  .div-lightbox .continents .image-lightbox-none {
+    display: none;
+  }
 }/*# sourceMappingURL=styles.css.map */

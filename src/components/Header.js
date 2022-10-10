@@ -8,7 +8,7 @@ function Header(props) {
     const [toggle, setToggle] = useState(false);
     function handleToggle() {
         setToggle(!toggle)
-    }
+    } 
 
     return (
         <div className='div-header'>
@@ -18,7 +18,7 @@ function Header(props) {
             </div>
             <div className='header-nav-responsive'>
                 <i onClick={()=>handleToggle()} className="fas fa-solid fa-bars"></i>
-                {toggle ? <Nav /> : ""}
+                {toggle ? <Nav toggle={() => setToggle(!toggle)} /> : ""}
             </div>
         </div>
     );
