@@ -672,133 +672,133 @@
             "type": "Polygon",
             "arcs": [[459, 460, -327, -205]],
             "id": "LBR",
-            "properties": { "name": "Liberia" }
+            "properties": { "name": "Liberia","color":"red" }
           },
           {
             "type": "Polygon",
             "arcs": [[461, -268, 462, 463, -272, 464, 465]],
             "id": "LBY",
-            "properties": { "name": "Libya" }
+            "properties": { "name": "Libya","color":"black" }
           },
           {
             "type": "Polygon",
             "arcs": [[466]],
             "id": "LKA",
-            "properties": { "name": "Sri Lanka" }
+            "properties": { "name": "Sri Lanka","color":"yellow" }
           },
           {
             "type": "Polygon",
             "arcs": [[467]],
             "id": "LSO",
-            "properties": { "name": "Lesotho" }
+            "properties": { "name": "Lesotho","color":"blue"}
           },
           {
             "type": "Polygon",
             "arcs": [[468, 469, 470, -91, 471]],
             "id": "LTU",
-            "properties": { "name": "Lithuania" }
+            "properties": { "name": "Lithuania","color":"yellow" }
           },
           {
             "type": "Polygon",
             "arcs": [[-248, -307, -62]],
             "id": "LUX",
-            "properties": { "name": "Luxembourg" }
+            "properties": { "name": "Luxembourg","color":"red" }
           },
           {
             "type": "Polygon",
             "arcs": [[472, -288, 473, -92, -471]],
             "id": "LVA",
-            "properties": { "name": "Latvia" }
+            "properties": { "name": "Latvia","color":"rgb(223, 68, 81)" }
           },
           {
             "type": "Polygon",
             "arcs": [[-265, 474, 475,-511, -264, 622]],
             "id": "MAR",
-            "properties": { "name": "Morocco" }
+            "properties": { "name": "Morocco","color":"red" }
           },
           {
             "type": "Polygon",
             "arcs": [[476, 477]],
             "id": "MDA",
-            "properties": { "name": "Moldova" }
+            "properties": { "name": "Moldova","color":"yellow" }
           },
           {
             "type": "Polygon",
             "arcs": [[478]],
             "id": "MDG",
-            "properties": { "name": "Madagascar" }
+            "properties": { "name": "Madagascar","color":"green" }
           },
           {
             "type": "Polygon",
             "arcs": [[-99, -343, 479, 480, 481]],
             "id": "MEX",
-            "properties": { "name": "Mexico" }
+            "properties": { "name": "Mexico","color":"green" }
           },
           {
             "type": "Polygon",
             "arcs": [[-452, 482, -82, -340, 483]],
             "id": "MKD",
-            "properties": { "name": "North Macedonia" }
+            "properties": { "name": "North Macedonia","color":"yellow" }
           },
           {
             "type": "Polygon",
             "arcs": [[484, -262, 485, -71, -207, -332, 486]],
             "id": "MLI",
-            "properties": { "name": "Mali" }
+            "properties": { "name": "Mali","color":"yellow"}
           },
           {
             "type": "Polygon",
             "arcs": [[487, -75, -384, -187, -456, 488]],
             "id": "MMR",
-            "properties": { "name": "Myanmar" }
+            "properties": { "name": "Myanmar","color":"yellow" }
           },
           {
             "type": "Polygon",
             "arcs": [[489, -89, 490, -450, -16]],
             "id": "MNE",
-            "properties": { "name": "Montenegro" }
+            "properties": { "name": "Montenegro","color":"red" }
           },
           {
             "type": "Polygon",
             "arcs": [[491, 492, 493, 494, 495, 496, 497, 498, -197]],
             "id": "MNG",
-            "properties": { "name": "Mongolia" }
+            "properties": { "name": "Mongolia","color":"red" }
           },
           {
             "type": "Polygon",
             "arcs": [[499, 500, 501, 502, 503, 504, 505, 506, 507]],
             "id": "MOZ",
-            "properties": { "name": "Mozambique" }
+            "properties": { "name": "Mozambique","color":"yellow" }
           },
           {
             "type": "Polygon",
             "arcs": [[508, 509, 510, -263, -485]],
             "id": "MRT",
-            "properties": { "name": "Mauritania" }
+            "properties": { "name": "Mauritania","color":"green" }
           },
           {
             "type": "Polygon",
             "arcs": [[-508, 511, 512, 513]],
             "id": "MWI",
-            "properties": { "name": "Malawi" }
+            "properties": { "name": "Malawi","color":"black" }
           },
           {
             "type": "MultiPolygon",
             "arcs": [[[514, 515, 516, 517]], [[-380, 518, -116, 519]]],
             "id": "MYS",
-            "properties": { "name": "Malaysia" }
+            "properties": { "name": "Malaysia" ,"color":"blue"}
           },
           {
             "type": "Polygon",
             "arcs": [[520, -8, 521, -120, 522]],
             "id": "NAM",
-            "properties": { "name": "Namibia" }
+            "properties": { "name": "Namibia","color":"green" }
           },
           {
             "type": "Polygon",
             "arcs": [[523]],
             "id": "NCL",
-            "properties": { "name": "New Caledonia" }
+            "properties": { "name": "New Caledonia","color":"green" }
           },
           {
             "type": "Polygon",

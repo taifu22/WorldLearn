@@ -17547,9 +17547,10 @@
         "borders": [
             "DZA",
             "ESH",
-            "ESP"
+            "ESP",
+            "MRT"
         ],
-        "area": 446550,
+        "area": 710850,
         "flag": "\ud83c\uddf2\ud83c\udde6",
         "demonyms": {
             "eng": {

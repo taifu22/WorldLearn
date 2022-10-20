@@ -9,7 +9,7 @@ function QuizCapitales(props) {
     const [toggleLength, setToggleLength] = useState(false);
     let [count, setCount] = useState(1);
     let [countResponses, setCountResponses] = useState(0);
-    let [timer10, setTimer10] = useState(10);
+    let [timer10, setTimer10] = useState(100);
     let [timer15, setTimer15] = useState(150);
     let [timer30, setTimer30] = useState(300);
     const [arrayCapitales, setArrayCapitales] = useState([]);
@@ -48,6 +48,7 @@ function QuizCapitales(props) {
     }
 
     function StartQuiz() {
+        console.log(__filename);
         randomNumberscChoicie()
         setInfoPays({flag:"",name:"",capital:[]});
         let arrayrandom = Object.keys([...new Array(199)]).sort( ()=>Math.random()-0.5 );
