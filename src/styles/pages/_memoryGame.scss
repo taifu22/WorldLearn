@@ -1,0 +1,41 @@
+.div-memoryGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 440px;
+    h2 {
+        text-align: center;
+        font-size: 30px;
+    }
+    button {
+        @include button;
+        margin-top: 25px;
+    }
+    .button-memoryGame {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .div-memoryGame {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 470px;
+        h2 {
+            text-align: center;
+            font-size: 23px;
+        }
+        button {
+            //@include button;
+            width: 50%;
+            margin-top: 25px;
+        }
+        .button-memoryGame {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

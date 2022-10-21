@@ -15,7 +15,7 @@ function Jeux(props) {
                 <div className='quiz-drapeaux'>
                     <h2>Memory game</h2>
                     <img src={MemoryGame}></img>
-                    <button><Link style={{textDecoration:'none', color:'white'}} to="/quizdrapeaux">Acceder</Link></button>
+                    <button><Link style={{textDecoration:'none', color:'white'}} to="/memorygame">Acceder</Link></button>
                 </div>
             </div>
         </div>

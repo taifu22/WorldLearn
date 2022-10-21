@@ -47,11 +47,13 @@
 
 @media screen and (max-width: 480px){
     .div-quiz-container {
+        height: 450px;
         h1 { 
             display: none;
         }
         .div-quiz {
             display: block !important;
+            margin-top: 0;
             h2 {
                 font-size: 20px;
             }

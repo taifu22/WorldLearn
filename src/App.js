@@ -7,6 +7,7 @@ import About from './pages/About';
 import Erreur_404 from './pages/Erreur_404';
 import Jeux from './pages/Jeux';
 import Quiz from './pages/Quiz';
+import MemoryGame from './pages/MemoryGame';
 import Listofstates from './pages/Listofstates';
 import Pageworldmap from './pages/Pageworldmap';
 import QuizCapitales from './pages/QuizCapitales';
@@ -23,6 +24,7 @@ function App() {
               <Route path='about' exact element={<About />}/>
               <Route path='jeux' exact element={<Jeux />}/>
               <Route path='quiz' exact element={<Quiz />}/>
+              <Route path='memorygame' exact element={<MemoryGame />}/>
               <Route path='quizcapitales' exact element={<QuizCapitales />}/>
               <Route path='quizdrapeaux' exact element={<QuizDrapeaux />}/>
               <Route path='pageworldmap' exact element={<Pageworldmap />}/>
