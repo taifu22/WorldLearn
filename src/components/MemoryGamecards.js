@@ -14,35 +14,37 @@ function MemoryGamecards(props) {
 
     return (
         <div className='container-memorygamecard'>
-            <h1>{props.level}</h1>
-            {props.arrayHide.map((item, index) =>{
-                return <img onClick={(event)=> {
-                    card1 = event;
-                    card2 = event;
-                    console.log(event)
-                    if(toggle){
-                        console.log(props.level)
-                        number2 = props.random[index];
-                        setToggle(!toggle);
-                        if(props.level == 'beginner' && (number1 === (number2+6) || number1 === (number2-6))){
-                            card2.currentTarget.src = props.arrayShow[index]
+            <h1>Level : {props.level}</h1>
+            <div className={props.level == 'intermediate' ? 'img-memoryGame-intermediate' : props.level == 'beginner' ? 'img-memoryGame-beginner': props.level == 'expert' ? 'img-memoryGame-expert' : ''}>
+                {props.arrayHide.map((item, index) =>{
+                    return <img onClick={(event)=> {
+                        card1 = event;
+                        card2 = event;
+                        console.log(event)
+                        if(toggle){
+                            console.log(props.level)
+                            number2 = props.random[index];
+                            setToggle(!toggle);
+                            if(number1 === (number2+props.num) || number1 === (number2-props.num)){
+                                card2.currentTarget.src = props.arrayShow[index]
+                            } else{
+                                card2.target.src = props.arrayShow[index]
+                                setTimeout(()=>{
+                                    card2.target.src = `/memoryGame/Hidden_card.png`;
+                                    card2.type = '';
+                                    image1.src = `/memoryGame/Hidden_card.png`;
+                                },1000);
+                            }
                         } else{
-                            card2.target.src = props.arrayShow[index]
-                            setTimeout(()=>{
-                                card2.target.src = `/memoryGame/Hidden_card.png`;
-                                card2.type = '';
-                                image1.src = `/memoryGame/Hidden_card.png`;
-                            },1000);
+                            console.log(toggle);
+                            card1.currentTarget.src = props.arrayShow[index];
+                            setImage1(card1.currentTarget);
+                            setNumber1(props.random[index])
+                            setToggle(!toggle);
                         }
-                    } else{
-                        console.log(toggle);
-                        card1.currentTarget.src = props.arrayShow[index];
-                        setImage1(card1.currentTarget);
-                        setNumber1(props.random[index])
-                        setToggle(!toggle);
-                    }
-                }} src={item}></img>
-            })}
+                    }} src={item}></img>
+                })}
+            </div>
         </div>
     );
 }

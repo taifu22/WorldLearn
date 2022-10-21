@@ -1,0 +1,60 @@
+.container-memorygamecard {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //width: 70%;
+    .img-memoryGame-beginner {
+        width: 65%;
+        img {
+            width: 15%;
+            height: 25%;
+            margin: 2px;
+        }
+    }
+    .img-memoryGame-intermediate {
+        width: 65%;
+        img {
+            width: 13%;
+            height: 25%;
+        }
+    }
+    .img-memoryGame-expert {
+        width: 75%;
+        img {
+            width: 9%;
+            height: 15%;
+            margin: 2px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .container-memorygamecard {
+        .img-memoryGame-beginner {
+            width: 90%;
+            img {
+                margin: 1px;
+                width: 23%;
+                height: 30%;
+            }
+        }
+        .img-memoryGame-intermediate {
+            width: 90%;
+            img {
+                margin: 1px;
+                width: 20%;
+                height: 18%;
+            }
+        }
+        .img-memoryGame-expert {
+            width: 90%;
+            img {
+                margin: 1px;
+                width: 13%;
+                height: 20%;
+            }
+        }
+    }
+}

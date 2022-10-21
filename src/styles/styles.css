@@ -1100,9 +1100,6 @@ path :focus {
   }
 }
 .div-memoryGame {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   height: 440px;
 }
 .div-memoryGame h2 {
@@ -1145,5 +1142,62 @@ path :focus {
   .div-memoryGame .button-memoryGame {
     display: flex;
     flex-direction: column;
+  }
+}
+.container-memorygamecard {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-memorygamecard .img-memoryGame-beginner {
+  width: 65%;
+}
+.container-memorygamecard .img-memoryGame-beginner img {
+  width: 15%;
+  height: 25%;
+  margin: 2px;
+}
+.container-memorygamecard .img-memoryGame-intermediate {
+  width: 65%;
+}
+.container-memorygamecard .img-memoryGame-intermediate img {
+  width: 13%;
+  height: 25%;
+}
+.container-memorygamecard .img-memoryGame-expert {
+  width: 75%;
+}
+.container-memorygamecard .img-memoryGame-expert img {
+  width: 9%;
+  height: 15%;
+  margin: 2px;
+}
+
+@media screen and (max-width: 480px) {
+  .container-memorygamecard .img-memoryGame-beginner {
+    width: 90%;
+  }
+  .container-memorygamecard .img-memoryGame-beginner img {
+    margin: 1px;
+    width: 23%;
+    height: 30%;
+  }
+  .container-memorygamecard .img-memoryGame-intermediate {
+    width: 90%;
+  }
+  .container-memorygamecard .img-memoryGame-intermediate img {
+    margin: 1px;
+    width: 20%;
+    height: 18%;
+  }
+  .container-memorygamecard .img-memoryGame-expert {
+    width: 90%;
+  }
+  .container-memorygamecard .img-memoryGame-expert img {
+    margin: 1px;
+    width: 13%;
+    height: 20%;
   }
 }/*# sourceMappingURL=styles.css.map */
