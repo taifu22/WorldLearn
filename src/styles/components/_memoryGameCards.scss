@@ -4,9 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    //width: 70%;
     .img-memoryGame-beginner {
         width: 65%;
+        margin-bottom: 80px;
         img {
             width: 15%;
             height: 25%;
@@ -22,6 +22,7 @@
     }
     .img-memoryGame-expert {
         width: 75%;
+        margin-bottom: 60px;
         img {
             width: 9%;
             height: 15%;
@@ -34,6 +35,7 @@
     .container-memorygamecard {
         .img-memoryGame-beginner {
             width: 90%;
+            margin-bottom: 100px;
             img {
                 margin: 1px;
                 width: 23%;
@@ -50,6 +52,7 @@
         }
         .img-memoryGame-expert {
             width: 90%;
+            margin-bottom: 110px;
             img {
                 margin: 1px;
                 width: 13%;

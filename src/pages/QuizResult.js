@@ -2,6 +2,7 @@ import React ,{useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 function QuizResult(props) {
+    
     useEffect(() => {
         if (props.data.length > 10) {
             props.data.pop();
@@ -10,16 +11,14 @@ function QuizResult(props) {
         } else if (props.data.length > 30) {
             props.data.pop();
         }
-    }, []);
-
-    //useEffect(() => console.log(props.data),[props.data])
+    }, []); 
     
     return (
         <div className='div-quiz-result'>
         <h1>Voici les reponses corrects</h1>
             {props.data.map((item, index) => { 
                 return(
-                    <div>
+                    <div> 
                       <div>
                          <p>{index+1} - </p>
                          <img src={`/data/${item.id}.svg`}></img>

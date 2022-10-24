@@ -635,6 +635,7 @@
     },
     {
         "name": {
+            "common1": "image_1.png",
             "common": "United Arab Emirates",
             "official": "United Arab Emirates",
             "native": {
@@ -2021,6 +2022,7 @@
     },
     {
         "name": {
+            "common1": "image_10.png",
             "common": "Belgium",
             "official": "Kingdom of Belgium",
             "native": {
@@ -3942,6 +3944,7 @@
     },
     {
         "name": {
+            "common1": "image_14.png",
             "common": "Brazil",
             "official": "Federative Republic of Brazil",
             "native": {
@@ -5281,6 +5284,7 @@
     },
     {
         "name": {
+            "common1": "image_13.png",
             "common": "Chile",
             "official": "Republic of Chile",
             "native": {
@@ -5763,6 +5767,7 @@
     },
     {
         "name": {
+            "common1": "image_12.png",
             "common": "Cameroon",
             "official": "Republic of Cameroon",
             "native": {
@@ -8470,6 +8475,7 @@
     },
     {
         "name": {
+            "common1": "image_15.png",
             "common": "Egypt",
             "official": "Arab Republic of Egypt",
             "native": {
@@ -10786,6 +10792,7 @@
     },
     {
         "name": {
+            "common1": "image_2.png",
             "common": "Gambia",
             "official": "Republic of the Gambia",
             "native": {
@@ -12470,6 +12477,7 @@
     },
     {
         "name": {
+            "common1": "image_3.png",
             "common": "Indonesia",
             "official": "Republic of Indonesia",
             "native": {
@@ -13565,6 +13573,7 @@
     },
     {
         "name": {
+            "common1": "image_4.png",
             "common": "Italy",
             "official": "Italian Republic",
             "native": {
@@ -17407,6 +17416,7 @@
     },
     {
         "name": {
+            "common1": "image_6.png",
             "common": "Morocco",
             "official": "Kingdom of Morocco",
             "native": {
@@ -23446,6 +23456,7 @@
     },
     {
         "name": {
+            "common1": "image_7.png",
             "common": "Palestine",
             "official": "State of Palestine",
             "native": {
@@ -24242,6 +24253,7 @@
     },
     {
         "name": {
+            "common1": "image_11.png",
             "common": "Saudi Arabia",
             "official": "Kingdom of Saudi Arabia",
             "native": {
@@ -24559,6 +24571,7 @@
     },
     {
         "name": {
+            "common1": "image_8.png",
             "common": "Senegal",
             "official": "Republic of Senegal",
             "native": {
@@ -24712,6 +24725,7 @@
     },
     {
         "name": {
+            "common1": "image_9.png",
             "common": "Singapore",
             "official": "Republic of Singapore",
             "native": {
@@ -26545,6 +26559,7 @@
     },
     {
         "name": {
+            "common1": "image_5.png",
             "common": "Sweden",
             "official": "Kingdom of Sweden",
             "native": {

@@ -36,9 +36,6 @@ function QuizDrapeaux(props) {
         })
     }, [])
 
-    //useEffect(() => console.log(InfoPays), [InfoPays]);
-    //useEffect(() => console.log(arrayNamePays), [arrayNamePays]);
-
     function randomNumberscChoicie() {
         setRandomNum([]);
         let randomNumberArray = Object.keys([...new Array(4)]).sort( ()=>Math.random()-0.5 );
@@ -46,7 +43,6 @@ function QuizDrapeaux(props) {
     }
 
     function StartQuiz() {
-        //randomNumberscChoicie(4);
         randomNumberscChoicie();
         setInfoPays({flag:"", arraypays:""});
         let arrayrandom = Object.keys([...new Array(199)]).sort( ()=>Math.random()-0.5 );
@@ -61,10 +57,6 @@ function QuizDrapeaux(props) {
             })
         }
         
-        if (arrayNamePays) {
-            console.log(arrayNamePays);
-        }
-
         setInfoPays(infoPays => ({...infoPays,flag:`/data/${arrayNamePays[randomNumber].id}.svg`}));
 
         setInfoPays(infoPays => ({...infoPays,arraypays:[...infoPays.arraypays, 0]}))
@@ -145,7 +137,7 @@ function QuizDrapeaux(props) {
     }
 
     return (
-        <div className='div-quizCapitales'>
+        <div className='div-quizCapitales'> 
             <div style={toggleLength ? {justifyContent:'space-between', flexDirection:'row'} : {display:'flex'}} className='header-quiz'>
                 <h1 style={toggleLength ? {display:'none'} : {display:'block'}}>Choisissez le nombre de questions</h1>
                 <button onClick={()=>{setToggle10Responses(true);setToggle15Responses(false);setToggle30Responses(false)}} style={toggleLength ? {display:'none'} : {display:'block'}} className='hover-button'>10 questions et 1 minute 40 de temps</button>

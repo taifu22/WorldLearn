@@ -492,6 +492,39 @@ html, body {
   background-color: white;
 }
 
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.controls {
+  display: flex;
+  position: fixed;
+  top: 60%;
+  left: 90%;
+  margin: 1.25rem 0;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.controls > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 2rem;
+  width: 2rem;
+  background: #132344;
+  color: #fff;
+  border-radius: 100%;
+  border: 0;
+  cursor: pointer;
+}
+
+.controls > button:first-child {
+  margin-right: 0.25rem;
+}
+
 .page-worldmap {
   height: 440px;
   -webkit-animation: myAnim1 1.5s ease 0s 1 normal forwards;
@@ -1100,7 +1133,7 @@ path :focus {
   }
 }
 .div-memoryGame {
-  height: 440px;
+  max-height: 1000px !important;
 }
 .div-memoryGame h2 {
   text-align: center;
@@ -1118,6 +1151,10 @@ path :focus {
   font-size: 20px;
   margin-top: 25px;
 }
+.div-memoryGame button:focus {
+  width: 25%;
+  color: white;
+}
 .div-memoryGame .button-memoryGame {
   display: flex;
   flex-direction: column;
@@ -1129,7 +1166,7 @@ path :focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 470px;
+    max-height: 1000px !important;
   }
   .div-memoryGame h2 {
     text-align: center;
@@ -1138,6 +1175,11 @@ path :focus {
   .div-memoryGame button {
     width: 50%;
     margin-top: 25px;
+  }
+  .div-memoryGame button:focus {
+    width: 55%;
+    height: 55px;
+    color: white;
   }
   .div-memoryGame .button-memoryGame {
     display: flex;
@@ -1153,6 +1195,7 @@ path :focus {
 }
 .container-memorygamecard .img-memoryGame-beginner {
   width: 65%;
+  margin-bottom: 80px;
 }
 .container-memorygamecard .img-memoryGame-beginner img {
   width: 15%;
@@ -1168,6 +1211,7 @@ path :focus {
 }
 .container-memorygamecard .img-memoryGame-expert {
   width: 75%;
+  margin-bottom: 60px;
 }
 .container-memorygamecard .img-memoryGame-expert img {
   width: 9%;
@@ -1178,6 +1222,7 @@ path :focus {
 @media screen and (max-width: 480px) {
   .container-memorygamecard .img-memoryGame-beginner {
     width: 90%;
+    margin-bottom: 100px;
   }
   .container-memorygamecard .img-memoryGame-beginner img {
     margin: 1px;
@@ -1194,10 +1239,52 @@ path :focus {
   }
   .container-memorygamecard .img-memoryGame-expert {
     width: 90%;
+    margin-bottom: 110px;
   }
   .container-memorygamecard .img-memoryGame-expert img {
     margin: 1px;
     width: 13%;
     height: 20%;
   }
+}
+.memory-result {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.memory-result h1 {
+  text-align: center;
+}
+.memory-result div {
+  width: auto;
+}
+.memory-result div div {
+  display: flex;
+  flex-direction: row;
+}
+.memory-result div div img {
+  width: 60px;
+  height: auto;
+  margin-left: 10px;
+  margin-right: 30px;
+}
+.memory-result div hr {
+  width: 50%;
+  margin-left: 0;
+}
+.memory-result button {
+  cursor: pointer;
+  background-color: #132344;
+  color: white;
+  width: 20%;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  width: 300px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }/*# sourceMappingURL=styles.css.map */
