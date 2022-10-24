@@ -24,7 +24,7 @@ function ModaleInfo(props) {
                   >
                   <span>&times;</span>  
                   </button>
-                </div>
+                </div> 
                 <div className="modal-body">
                     <img className='img-map' src={`/countries-map/${props.id}.png`} alt={props.id}></img>
                     <div className='body-country-info'>

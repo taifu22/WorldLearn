@@ -52,10 +52,10 @@ function MemoryGamecards(props) {
                                 props.arrayShow[index].nameOfState = props.arrayShow[index].nameOfState.replace(str[0],str1-6)
                                 setState(props.arrayShow[index]);
                             } else if(props.level == 'intermediate' && str1 > 10){
-                                props.arrayShow[index].nameOfState = props.arrayShow[index].nameOfState.replace(str[0],str1-6)
+                                props.arrayShow[index].nameOfState = props.arrayShow[index].nameOfState.replace(str[0],str1-10)
                                 setState(props.arrayShow[index]);
-                            } else if(props.level == 'beginner' && str1 > 15){
-                                props.arrayShow[index].nameOfState = props.arrayShow[index].nameOfState.replace(str[0],str1-6)
+                            } else if(props.level == 'expert' && str1 > 15){
+                                props.arrayShow[index].nameOfState = props.arrayShow[index].nameOfState.replace(str[0],str1-15)
                                 setState(props.arrayShow[index]);
                             } else {
                                 setState(props.arrayShow[index]);

@@ -29,7 +29,7 @@ function MemoryResult(props) {
                 }
             })
         })
-    }
+    } 
 
     return (
      <div className='memory-result' style={{maxHeight:'1000px'}}>

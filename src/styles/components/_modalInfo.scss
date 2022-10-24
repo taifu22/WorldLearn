@@ -140,11 +140,16 @@
     .modal-body{
       flex-direction: column;
       img {
-        max-height: 400px;
+        max-height: 400px; 
       }
     }
   }
-}
-
-.modal-worldmap {
+  .modal-worldmap {
+    top: -100px;
+  left: -100px;
+  right: -200px;
+  width: 120vw;
+  height: 104vh;
+  z-index: 1040;
+  }
 }
