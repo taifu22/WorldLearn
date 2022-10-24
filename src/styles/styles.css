@@ -492,11 +492,6 @@ html, body {
   background-color: white;
 }
 
-svg {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .controls {
   display: flex;
   position: fixed;
@@ -505,6 +500,11 @@ svg {
   margin: 1.25rem 0;
   text-align: center;
   transform: translateX(-50%);
+}
+.controls svg {
+  display: inline-block;
+  vertical-align: middle;
+  height: 50px !important;
 }
 
 .controls > button {

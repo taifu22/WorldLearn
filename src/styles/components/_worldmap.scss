@@ -3,11 +3,6 @@
     width: auto;
     background-color: white;
 }
-
-svg {
-    display: inline-block;
-    vertical-align: middle;
-  }
   
   .controls {
     display: flex;
@@ -17,6 +12,11 @@ svg {
     margin: 1.25rem 0;
     text-align: center;
     transform: translateX(-50%);
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      height: 50px !important;
+    }
   }
   
   .controls > button {
@@ -40,7 +40,7 @@ svg {
     position: fixed;
     left: 0;
     @include button;
-    color: white;
+    color: white; 
     width: 200px;
     font-size: 15px;
     height: 40px;
