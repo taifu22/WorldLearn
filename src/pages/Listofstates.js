@@ -7,6 +7,7 @@ import Oceania from '../assets/Oceania.png';
 import DropDown from '../components/DropDown';
 import World from '../assets/World.png';
 import Lightbox from '../components/Lightbox';
+import { Link } from 'react-router-dom';
 
 function Listofstates(props) {
 
@@ -65,7 +66,7 @@ function Listofstates(props) {
 
     function handleWorld() {
         setToggleWorld(!toggleWorld);
-        setToggleContinent(!toggleContinent);
+        setToggleContinent(!toggleContinent); 
     }
 
     return dataPaysinfo && (

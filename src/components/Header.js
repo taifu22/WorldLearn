@@ -2,8 +2,9 @@ import React from 'react';
 import Logo from '../assets/Logo-officiel.png';
 import Nav from './Nav';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function Header(props) { 
+function Header(props) {  
 
     const [toggle, setToggle] = useState(false);
     function handleToggle() {
@@ -12,7 +13,7 @@ function Header(props) {
 
     return (
         <div className='div-header'>
-            <img src={Logo}></img>
+            <Link style={{color:'white' , textDecoration:'none'}} to={"/"}><img src={Logo}></img></Link>
             <div className='header-nav'>
                 <Nav /> 
             </div>

@@ -525,6 +525,31 @@ svg {
   margin-right: 0.25rem;
 }
 
+.button-link {
+  position: fixed;
+  left: 0;
+  cursor: pointer;
+  background-color: #132344;
+  color: white;
+  width: 20%;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  width: 200px;
+  font-size: 15px;
+  height: 40px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 480px) {
+  .controls {
+    top: 80%;
+  }
+}
 .page-worldmap {
   height: 440px;
   -webkit-animation: myAnim1 1.5s ease 0s 1 normal forwards;
@@ -555,7 +580,6 @@ path :focus {
   .page-worldmap .world-map {
     margin-top: 10px;
     height: 400px;
-    margin-right: 30px;
   }
   .page-worldmap .world-map svg {
     height: 500px;
@@ -835,10 +859,11 @@ path :focus {
   bottom: -20px;
   right: 10px;
   display: flex;
+  width: 300px;
   align-items: center;
 }
 .div-listofpays .div-world .p-world i {
-  margin-left: 20px;
+  cursor: pointer;
   font-size: 100px;
 }
 .div-listofpays .div-world .p-world-none {
@@ -855,8 +880,10 @@ path :focus {
   z-index: 1;
   position: absolute;
   top: 420px;
+  width: 300px;
 }
 .div-listofpays .p-continent i {
+  cursor: pointer;
   margin-left: 20px;
   font-size: 100px;
 }
@@ -906,6 +933,7 @@ path :focus {
     left: -20px;
   }
   .div-listofpays .p-continent i {
+    cursor: pointer;
     margin-right: 20px;
     font-size: 100px;
   }
@@ -1094,9 +1122,11 @@ path :focus {
   font-size: 100px;
   width: 15%;
   display: flex;
+  cursor: pointer;
 }
 .div-lightbox .icon2 {
   justify-content: flex-end;
+  cursor: pointer;
 }
 .div-lightbox .continents {
   margin-top: -100px;

@@ -1,4 +1,5 @@
 import React, { memo, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -71,7 +72,7 @@ const WorldMap = () => {
           center={position.coordinates}
           onMoveEnd={handleMoveEnd}
         >
-          <Geographies geography="/features.json">
+          <Geographies geography="/features.json" >
             {({ geographies }) =>
               geographies.map((geo) => (
                 <Geography
@@ -90,10 +91,11 @@ const WorldMap = () => {
                   onClick={() => handleClick(geo)}
                   outline='none'
                   fill={geo.properties.color ? geo.properties.color : 'red'}
+                  stroke="#FFF"
+                  strokeWidth={0.5}
                   style={{
                     default: {
-                      //background: geo.properties.color ? geo.properties.color : 'red',
-                    //  outline: "none"
+                      outline: "none"
                     },
                     hover: {
                       fill: "#F53",
@@ -101,7 +103,8 @@ const WorldMap = () => {
                     },
                     pressed: {
                       //fill: "#E42",
-                      outline: "none"
+                      outline: "none",
+                      borderColor: "none"
                     }
                   }}
                 />
@@ -137,6 +140,7 @@ const WorldMap = () => {
           </svg>
         </button>
       </div>
+      <button className="button-link"><Link style={{color:'white' , textDecoration:'none'}} to={"/"}>Retour à l'accueil</Link></button>
       {isInfoShowed && dataPays && dataPaysinfo && dataPaysinfo1 && 
         <ModaleInfo toggle={togglePageWorldMap} dataAll={dataPaysinfo} dataPays={dataPaysinfo1} id={dataPays.id} title={dataPays.properties.name} languages={dataPaysinfo1.languages} hide={() =>{toggleInfo(); setTogglePageWorldMap(!togglePageWorldMap)}} show={isInfoShowed}/>}
     </div>

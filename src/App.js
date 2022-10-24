@@ -13,7 +13,6 @@ import Pageworldmap from './pages/Pageworldmap';
 import QuizCapitales from './pages/QuizCapitales';
 import QuizDrapeaux from './pages/QuizDrapeaux';
 import QuizResult from './pages/QuizResult';
-import MemoryResult from './pages/MemoryResult';
 
 function App() {
   return (
