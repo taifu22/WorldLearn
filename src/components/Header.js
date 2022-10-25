@@ -8,7 +8,7 @@ function Header(props) {
 
     const [toggle, setToggle] = useState(false);
     function handleToggle() {
-        setToggle(!toggle)
+        setToggle(!toggle) 
     } 
 
     return (

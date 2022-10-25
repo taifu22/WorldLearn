@@ -40,7 +40,7 @@ function MemoryResult(props) {
                     <div>
                         <p>{index+1} - </p>
                         <img src={item.flag}></img>
-                        {<p className='p-none'> This is the flag of {item.name}</p> }
+                        {<p className='p-none'> {item.name}</p> }
                     </div>
                     <hr />
                 </div>)

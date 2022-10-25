@@ -38,7 +38,6 @@ function DropDown(props) {
         })
       }, [])
 
-
     return (
         <div className='dropdown'>
             <div className='dropdown-header'>
@@ -49,7 +48,7 @@ function DropDown(props) {
             {toggleDropdown && 
             <div className='dropdown-body'>
                 <ul className='ul-dropdown'>
-                  <input onChange={e => setValueInput(e.target.value)} type={'search'} value={valueInput} placeholder={"rentrez le nom d'un pays"}></input>
+                  <input onChange={e => setValueInput(e.target.value.toLowerCase())} type={'search'} value={valueInput} placeholder={"rentrez le nom d'un pays"}></input>
                  {props.pays.map((item, index) => {
                     return (
                          valueInput && valueInput == "" ?
@@ -67,7 +66,7 @@ function DropDown(props) {
                                 <img key={'img'+index} src={`/data/${item.id}.svg`} alt={item.id}></img>
                             </li>
                             <hr key={'hr'+index}></hr> 
-                        </> 
+                        </>  
                     )
                  })}
                  </ul>

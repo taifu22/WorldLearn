@@ -19,12 +19,13 @@
 
 @media screen and (max-width: 480px){
     .div-header {
-        height: 80px;
+        height: 80px; 
         width: 100%;
         background-color: $background;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
         .header-nav {
             display: none; 
         }
@@ -33,8 +34,10 @@
             margin-right: 25px;
             .fa-bars {
                 position: absolute;
-                top: 40px;
+                top: 35px;
                 right: 50px;
+                font-size: 17px;
+                color: white;
             }
         }
         img {

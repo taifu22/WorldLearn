@@ -146,10 +146,23 @@
   }
   .modal-worldmap {
     top: -100px;
-  left: -100px;
-  right: -200px;
-  width: 120vw;
-  height: 104vh;
-  z-index: 1040;
-  }
+    left: -100px;
+    right: -200px;
+    width: 120vw;
+    height: 104vh;
+    z-index: 1040;
+  } 
+  .modal-overlay {
+    top: -110px;
+    left: -100px;
+    right: -200px;
+    width: 120vw;
+    height: 104vh;
+    z-index: 1040;
+    .modal-wrapper {
+      .modal {
+        margin-top: 30px;
+      }
+    }
+  } 
 }
