@@ -15,9 +15,9 @@ function DropDown(props) {
         setToggleDropdown(!toggleDropdown);
     }
 
-    function handleClick(data) {
+    function handleClick(data) { 
         toggleInfo()
-        dataPaysinfo.find(item => {
+        dataPaysinfo.find(item => { 
             if (item.cca3 === data.id) {
               setDataPaysInfo1(item)
             }
@@ -33,11 +33,11 @@ function DropDown(props) {
         .then(response => { 
          return response.json()
         })
-        .then(data => {
+        .then(data => { 
          setDataPaysInfo(data);
         })
       }, [])
-
+ 
     return (
         <div className='dropdown'>
             <div className='dropdown-header'>
@@ -70,7 +70,7 @@ function DropDown(props) {
                     )
                  })}
                  </ul>
-            </div>}
+            </div>} 
             {isInfoShowed && <ModaleInfo dataAll={dataPaysinfo} dataPays={dataPaysinfo1} id={dataPaysinfo1.cca3} title={dataPaysinfo1.name.common} languages={dataPaysinfo1.languages} hide={toggleInfo} show={isInfoShowed}/>}
         </div> 
     );

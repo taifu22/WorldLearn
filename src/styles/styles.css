@@ -164,6 +164,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
   .div-header .header-nav {
     display: none;
@@ -174,8 +175,10 @@ html, body {
   }
   .div-header .header-nav-responsive .fa-bars {
     position: absolute;
-    top: 40px;
+    top: 35px;
     right: 50px;
+    font-size: 17px;
+    color: white;
   }
   .div-header img {
     height: 30px;
@@ -192,6 +195,8 @@ html, body {
   color: white;
   font-weight: bold;
   font-family: "Montserrat";
+  width: 100%;
+  height: 100px; /* Hauteur du pied de page */
 }
 
 .ul-nav {
@@ -209,21 +214,21 @@ html, body {
 
 @media screen and (max-width: 480px) {
   .ul-nav {
+    position: absolute;
+    right: -50px;
+    top: 70px;
     padding: 0;
     background-color: #FFA808;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: -187px;
-    margin-top: 153px;
-    width: 359px;
-    opacity: 0.9;
+    width: 100%;
     z-index: 1;
   }
   .p-nav {
-    font-size: 12px;
-    margin: 5px;
+    font-size: 13px;
+    margin: 7px;
     text-transform: uppercase;
   }
 }
@@ -733,6 +738,25 @@ path :focus {
   .modal .modal-body img {
     max-height: 400px;
   }
+  .modal-worldmap {
+    top: -100px;
+    left: -100px;
+    right: -200px;
+    width: 120vw;
+    height: 104vh;
+    z-index: 1040;
+  }
+  .modal-overlay {
+    top: -110px;
+    left: -100px;
+    right: -200px;
+    width: 120vw;
+    height: 104vh;
+    z-index: 1040;
+  }
+  .modal-overlay .modal-wrapper .modal {
+    margin-top: 30px;
+  }
 }
 .div-flag-component {
   font-family: "Montserrat";
@@ -998,6 +1022,12 @@ path :focus {
     font-size: 15px;
   }
 }
+.validate-button {
+  background-color: #FFA808 !important;
+  border: none;
+  color: #132344 !important;
+}
+
 .quiz-body {
   display: flex;
   flex-direction: column;
@@ -1181,14 +1211,22 @@ path :focus {
   font-size: 20px;
   margin-top: 25px;
 }
-.div-memoryGame button:focus {
-  width: 25%;
-  color: white;
-}
 .div-memoryGame .button-memoryGame {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.div-memoryGame .button-memoryGame .button-green {
+  background-color: green;
+  width: 25%;
+}
+.div-memoryGame .button-memoryGame .button-yellow {
+  background-color: #FFA808;
+  width: 25%;
+}
+.div-memoryGame .button-memoryGame .button-red {
+  background-color: red;
+  width: 25%;
 }
 
 @media screen and (max-width: 480px) {
@@ -1206,14 +1244,12 @@ path :focus {
     width: 50%;
     margin-top: 25px;
   }
-  .div-memoryGame button:focus {
-    width: 55%;
-    height: 55px;
-    color: white;
-  }
   .div-memoryGame .button-memoryGame {
     display: flex;
     flex-direction: column;
+  }
+  .div-memoryGame .button-memoryGame .button-green, .div-memoryGame .button-memoryGame .button-red, .div-memoryGame .button-memoryGame .button-yellow {
+    width: 55%;
   }
 }
 .container-memorygamecard {
@@ -1231,6 +1267,7 @@ path :focus {
   width: 15%;
   height: 25%;
   margin: 2px;
+  border-radius: 10px;
 }
 .container-memorygamecard .img-memoryGame-intermediate {
   width: 65%;
@@ -1238,6 +1275,7 @@ path :focus {
 .container-memorygamecard .img-memoryGame-intermediate img {
   width: 13%;
   height: 25%;
+  border-radius: 10px;
 }
 .container-memorygamecard .img-memoryGame-expert {
   width: 75%;
@@ -1247,6 +1285,7 @@ path :focus {
   width: 9%;
   height: 15%;
   margin: 2px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 480px) {
@@ -1317,4 +1356,9 @@ path :focus {
   width: 300px;
   margin-bottom: 30px;
   margin-top: 30px;
+}
+
+.div-app {
+  position: relative;
+  height: 100%;
 }/*# sourceMappingURL=styles.css.map */

@@ -19,7 +19,7 @@ function Quiz(props) {
                 </div>
             </div>
         </div> 
-    );
+    ); 
 }
 
 export default Quiz;

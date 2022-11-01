@@ -16,7 +16,7 @@ import QuizResult from './pages/QuizResult';
 
 function App() {
   return (
-    <div>
+    <div className='div-app'>
         <BrowserRouter>
           <Header />
           <Routes>

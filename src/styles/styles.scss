@@ -21,3 +21,8 @@
 @import './pages/memoryGame';
 @import './components/memoryGameCards';
 @import './pages/memoryResult';
+
+.div-app {
+    position: relative;
+    height: 100%;
+}

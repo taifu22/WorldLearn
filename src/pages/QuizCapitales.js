@@ -37,9 +37,6 @@ function QuizCapitales(props) {
          setDataPaysInfo(data); 
         })
     }, [])
-
-    //useEffect(()=> {console.log(arrayRightWrong)}, [arrayRightWrong]);
-
   
     function randomNumberscChoicie() {
         setRandomNum([]);
@@ -155,7 +152,7 @@ function QuizCapitales(props) {
                 <button style={toggleLength ? {display:'none'} : {display:'block'}} onClick={()=>{setToggleLength(!toggleLength);startTimer();StartQuiz();}}>Demarrer le quiz</button>
                 <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}}><Link style={{color:'white' , textDecoration:'none'}} to="/quiz">Quitter le quiz</Link></button>
                 <p style={toggleLength ? {display:'block'} : {display:'none'}}>timer {toggle10Responses ? Math.floor(timer10/60)+":"+timer10%60 : toggle15Responses ? Math.floor(timer15/60)+":"+timer15%60 : toggle30Responses ? Math.floor(timer30/60)+":"+timer30%60 : ""}</p>
-                <button style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>{setgreen(true);setbleu(false);NextQuiz()}}>Valider la question</button>
+                <button className={bleu == false ? 'validate-button' : ""} style={toggleLength ? {display:'block', marginBottom:'90px'} : {display:'none'}} onClick={()=>{setgreen(true);setbleu(false);NextQuiz()}}>Valider la question</button>
             </div>
             {InfoPays.capital  && InfoPays.name && InfoPays.flag && randomnum && 
             <QuizComponent colorgreen={green} colorbleu={bleu} name={InfoPays.name} flag={InfoPays.flag} toggle={toggleLength} cap={InfoPays.capital} random1={randomnum[0]}

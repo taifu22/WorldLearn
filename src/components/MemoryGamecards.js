@@ -2,17 +2,17 @@ import React, {useState} from 'react';
 import MemoryResult from '../pages/MemoryResult';
 
 
-function MemoryGamecards(props) {
+function MemoryGamecards(props) { 
 
     const [image1, setImage1] = useState();
-    const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(false); 
     const [number1, setNumber1] = useState();
     const [count, setCount] = useState(0)
     const [arrayWin, setArrayWin] = useState([]);
     const [state, setState] = useState();
     let number2;
     let card2;
-    let card1;
+    let card1; 
 
     if ((props.level == 'expert' && count >= 30) || (props.level == 'beginner' && count >= 12) || (props.level == 'intermediate' && count >= 20)) {
         return <MemoryResult data={arrayWin} level={props.level}/>
@@ -30,7 +30,8 @@ function MemoryGamecards(props) {
                             number2 = props.random[index];
                             setToggle(!toggle);
                             if(number1 === (number2+props.num) || number1 === (number2-props.num)){
-                                card2.currentTarget.src = props.arrayShow[index].oneCard
+                                console.log(card2);
+                                card2.currentTarget.src = props.arrayShow[index].oneCard;
                                 setCount(count + 1);
                                 setArrayWin(arrayWin => [...arrayWin, state])
                             } else{

@@ -35,7 +35,7 @@ function QuizComponent(props) {
                     <button ref={button4} onClick={(e) => {props.func(); handleColor(e)}} style={props.colorgreen && props.cap[props.random4].color == 'green' ? {backgroundColor:"green", color:'white'} : props.colorgreen && props.cap[props.random4].color == 'red' && button4.current.className == 'button-yellow' ? {backgroundColor:"red", color:'white'} : {backgroundColor:""}} className={props.colorbleu && (button4.current.className == 'button-yellow' || button4.current.className == 'button-bleu') ? button4.current.className = 'hover-button-responses' : 'hover-button-responses'}>{props.cap[props.random4]?.green}</button>
                 </div>
             </div>
-        </div> 
+        </div>  
     );
 }
 

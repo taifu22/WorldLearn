@@ -17,7 +17,7 @@ function MemoryGame(props) {
     let beginnerArrayShow = [];
     let intermediateArrayShow = [];
     let expertArrayShow = [];
-    let randomNumberArray = [];
+    let randomNumberArray = []; 
     let numberRandom;
     let oneCard;
     let nameOfState;
@@ -55,7 +55,7 @@ function MemoryGame(props) {
                 if (!randomNumberArray.includes(numberRandom)) {
                         
                 randomNumberArray.push(numberRandom);
-                added1 = true;
+                added1 = true; 
                 }
             } while ((added1 = false)); 
         }
@@ -65,10 +65,10 @@ function MemoryGame(props) {
         <div className='div-memoryGame' style={{maxHeight:'1000px'}}>
             <h2 style={buttonNone ? {display:'none'} : {display:'block'}}  className="h2">Choisissez le niveau du jeu</h2>
             <div className='button-memoryGame'>
-                <button onClick={()=> {setBeginner(true);setIntermediate(false);setExpert(false)}} style={buttonNone ? {display:'none'} : {display:'block', backgroundColor:'green'}} className="beginner">Beginner</button>
-                <button onClick={()=> {setBeginner(false);setIntermediate(true);setExpert(false)}} style={buttonNone ? {display:'none'} : {display:'block', backgroundColor:'#FFA808'}} className="intermediate">Intermediate</button>
-                <button onClick={()=> {setBeginner(false);setIntermediate(false);setExpert(true)}} style={buttonNone ? {display:'none'} : {display:'block', backgroundColor:'red'}} className="expert">Expert</button>
-                <button style={buttonNone ? {display:'none'} : {display:'block', marginBottom: '50px'}} onClick={()=>{setButtonNone(!buttonNone);StartMemoryGame();}}>Demarrer le quiz</button>
+                <button onClick={()=> {setBeginner(true);setIntermediate(false);setExpert(false)}} style={buttonNone ? {display:'none'} : {display:'block'}} >Beginner</button>
+                <button onClick={()=> {setIntermediate(true);setBeginner(false);setExpert(false)}} style={buttonNone ? {display:'none'} : {display:'block'}} className="intermediate">Intermediate</button>
+                <button onClick={()=> {setExpert(true);setBeginner(false);setIntermediate(false)}} style={buttonNone ? {display:'none'} : {display:'block'}} className="expert">Expert</button>
+                <button className={beginner ? 'button-green' : intermediate ? 'button-yellow' : expert ? 'button-red' : ""} style={buttonNone ? {display:'none'} : {display:'block', marginBottom: '50px'}} onClick={()=>{setButtonNone(!buttonNone);StartMemoryGame();}}>Demarrer le jeu</button>
             </div>
             {beginner && buttonNone && <MemoryGamecards num={6} arrayShow={beginnerArrayShow1} arrayHide={beginnerArrayHide} random={randomNumberArray1} level={'beginner'}/>}
             {intermediate && buttonNone && <MemoryGamecards num={10} arrayShow={intermediateArrayShow1} arrayHide={intermediateArrayHide} random={randomNumberArray1} level={'intermediate'}/>}
@@ -77,4 +77,4 @@ function MemoryGame(props) {
     );
 }
 
-export default MemoryGame;
+export default MemoryGame; 
