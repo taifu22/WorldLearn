@@ -1193,7 +1193,7 @@ path :focus {
   }
 }
 .div-memoryGame {
-  max-height: 1000px !important;
+  max-height: 2000px !important;
 }
 .div-memoryGame h2 {
   text-align: center;
@@ -1234,7 +1234,7 @@ path :focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-height: 1000px !important;
+    max-height: 2000px !important;
   }
   .div-memoryGame h2 {
     text-align: center;

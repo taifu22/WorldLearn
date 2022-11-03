@@ -5,11 +5,13 @@ import MemoryResult from '../pages/MemoryResult';
 function MemoryGamecards(props) { 
 
     const [image1, setImage1] = useState();
-    const [toggle, setToggle] = useState(false); 
+    const [toggle, setToggle] = useState(false);
     const [number1, setNumber1] = useState();
     const [count, setCount] = useState(0)
     const [arrayWin, setArrayWin] = useState([]);
     const [state, setState] = useState();
+    const [index1, setIndex1] = useState();
+    const [arrayCardsForms, setArrayCardsForms] = useState([])
     let number2;
     let card2;
     let card1; 
@@ -26,12 +28,20 @@ function MemoryGamecards(props) {
                     return <img onClick={(event)=> {
                         card1 = event;
                         card2 = event;
-                        if(toggle){
+                        if(arrayCardsForms.includes(index) === true){
+                            console.log(arrayCardsForms);
+                            console.log(index)
+                            return false
+                        }else{
+                            if(toggle){
                             number2 = props.random[index];
                             setToggle(!toggle);
                             if(number1 === (number2+props.num) || number1 === (number2-props.num)){
-                                console.log(card2);
+                                console.log('if if');
                                 card2.currentTarget.src = props.arrayShow[index].oneCard;
+                                console.log(card2.currentTarget);
+                            
+                                setArrayCardsForms(arrayCardsForms=>[...arrayCardsForms, index, index1]);
                                 setCount(count + 1);
                                 setArrayWin(arrayWin => [...arrayWin, state])
                             } else{
@@ -44,6 +54,8 @@ function MemoryGamecards(props) {
                                 setCount(count - 1);
                             }
                         } else{
+                            console.log('else');
+                            setIndex1(index)
                             card1.currentTarget.src = props.arrayShow[index].oneCard;
                             setImage1(card1.currentTarget);
                             setNumber1(props.random[index])
@@ -64,7 +76,8 @@ function MemoryGamecards(props) {
                             setToggle(!toggle);
                             setCount(count + 1);
                         }
-                    }} src={item} key={index}></img>
+                        }
+                    }} src={item} key={index}/>
                 })}
             </div>
         </div>

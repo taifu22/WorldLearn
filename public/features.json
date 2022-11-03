@@ -806,37 +806,37 @@
               [-72, -486, -261, -462, 524, 525, 526, 527, 528, -213, 529, -68]
             ],
             "id": "NER",
-            "properties": { "name": "Niger" }
+            "properties": { "name": "Niger","color":"orange" }
           },
           {
             "type": "Polygon",
             "arcs": [[530, -69, -530, -212]],
             "id": "NGA",
-            "properties": { "name": "Nigeria" }
+            "properties": { "name": "Nigeria","color":"green" }
           },
           {
             "type": "Polygon",
             "arcs": [[531, -353, 532, -237]],
             "id": "NIC",
-            "properties": { "name": "Nicaragua" }
+            "properties": { "name": "Nicaragua","color":"blue" }
           },
           {
             "type": "Polygon",
             "arcs": [[-249, -60, 533]],
             "id": "NLD",
-            "properties": { "name": "Netherlands" }
+            "properties": { "name": "Netherlands","color":"orange" }
           },
           {
             "type": "MultiPolygon",
             "arcs": [[[-302, 534, 535]], [[536]], [[537]], [[538]]],
             "id": "NOR",
-            "properties": { "name": "Norway" }
+            "properties": { "name": "Norway","color":"red" }
           },
           {
             "type": "Polygon",
             "arcs": [[-383, -190]],
             "id": "NPL",
-            "properties": { "name": "Nepal" }
+            "properties": { "name": "Nepal","color":"blue" }
           },
           {
             "type": "MultiPolygon",
@@ -848,25 +848,25 @@
             "type": "MultiPolygon",
             "arcs": [[[541, 542, -22, 543]], [[-20, 544]]],
             "id": "OMN",
-            "properties": { "name": "Oman" }
+            "properties": { "name": "Oman","color":"red" }
           },
           {
             "type": "Polygon",
             "arcs": [[-192, -386, 545, -389, -5]],
             "id": "PAK",
-            "properties": { "name": "Pakistan" }
+            "properties": { "name": "Pakistan","color":"#006400" }
           },
           {
             "type": "Polygon",
             "arcs": [[546, -239, 547, -232]],
             "id": "PAN",
-            "properties": { "name": "Panama" }
+            "properties": { "name": "Panama","color":"DarkBlue" }
           },
           {
             "type": "Polygon",
             "arcs": [[-173, 548, -270, -235, -107, -103]],
             "id": "PER",
-            "properties": { "name": "Peru" }
+            "properties": { "name": "Peru","color":"white" }
           },
           {
             "type": "MultiPolygon",
@@ -880,25 +880,25 @@
               [[555]]
             ],
             "id": "PHL",
-            "properties": { "name": "Philippines" }
+            "properties": { "name": "Philippines","color":"blue" }
           },
           {
             "type": "MultiPolygon",
             "arcs": [[[556]], [[557]], [[-376, 558]], [[559]]],
             "id": "PNG",
-            "properties": { "name": "Papua New Guinea" }
+            "properties": { "name": "Papua New Guinea","color":"black" }
           },
           {
             "type": "Polygon",
             "arcs": [[-246, 560, 561, -472, -98, 562, 563, -243]],
             "id": "POL",
-            "properties": { "name": "Poland" }
+            "properties": { "name": "Poland","color":"white" }
           },
           {
             "type": "Polygon",
             "arcs": [[564]],
             "id": "PRI",
-            "properties": { "name": "Puerto Rico" }
+            "properties": { "name": "Puerto Rico","color":"red" }
           },
           {
             "type": "Polygon",
@@ -910,7 +910,7 @@
             "type": "Polygon",
             "arcs": [[-284, 567]],
             "id": "PRT",
-            "properties": { "name": "Portugal" }
+            "properties": { "name": "Portugal","color":"green" }
           },
           {
             "type": "Polygon",
@@ -922,13 +922,13 @@
             "type": "Polygon",
             "arcs": [[568, 569]],
             "id": "QAT",
-            "properties": { "name": "Qatar" }
+            "properties": { "name": "Qatar","color":"brown" }
           },
           {
             "type": "Polygon",
             "arcs": [[570, -478, 571, 572, -78, 573, -363]],
             "id": "ROU",
-            "properties": { "name": "Romania" }
+            "properties": { "name": "Romania","color":"#FFD700" }
           },
           {
             "type": "MultiPolygon",
@@ -1007,19 +1007,19 @@
               [[618]]
             ],
             "id": "RUS",
-            "properties": { "name": "Russia" }
+            "properties": { "name": "Russia","color":"blue" }
           },
           {
             "type": "Polygon",
             "arcs": [[619, 620, -57, -220, 621]],
             "id": "RWA",
-            "properties": { "name": "Rwanda" }
+            "properties": { "name": "Rwanda","color":"DeepSkyBlue" }
           },
           {
             "type": "Polygon",
             "arcs": [[623, -415, -397, -454, 624, -570, 625, -23, -543, 626]],
             "id": "SAU",
-            "properties": { "name": "Saudi Arabia" }
+            "properties": { "name": "Saudi Arabia","color":"green" }
           },
           {
             "type": "Polygon",
@@ -1027,13 +1027,13 @@
               [627, 628, -124, 629, -465, -271, 630, -279, 631, -298, 632]
             ],
             "id": "SDN",
-            "properties": { "name": "Sudan" }
+            "properties": { "name": "Sudan","color":"red" }
           },
           {
             "type": "Polygon",
             "arcs": [[633, -296, -438, 634, 635, -226, -126, 636, -628]],
             "id": "SSD",
-            "properties": { "name": "South Sudan" }
+            "properties": { "name": "South Sudan","color":"blue" }
           },
           {
             "type": "Polygon",
@@ -1063,13 +1063,13 @@
             "type": "Polygon",
             "arcs": [[646, 647, -291, -253, 648, -439, -294]],
             "id": "SOM",
-            "properties": { "name": "Somalia" }
+            "properties": { "name": "Somalia","color":"DeepSkyBlue" }
           },
           {
             "type": "Polygon",
             "arcs": [[-83, -483, -451, -491, -88, 649, -355, 650, -364, -574]],
             "id": "SRB",
-            "properties": { "name": "Serbia" }
+            "properties": { "name": "Serbia","color":"blue" }
           },
           {
             "type": "Polygon",
@@ -1087,13 +1087,13 @@
             "type": "Polygon",
             "arcs": [[-41, -366, -358, 654, -411]],
             "id": "SVN",
-            "properties": { "name": "Slovenia" }
+            "properties": { "name": "Slovenia","color":"white" }
           },
           {
             "type": "Polygon",
             "arcs": [[-535, -301, 655]],
             "id": "SWE",
-            "properties": { "name": "Sweden" }
+            "properties": { "name": "Sweden","color":"DodgerBlue" }
           },
           {
             "type": "Polygon",
@@ -1111,31 +1111,31 @@
             "type": "Polygon",
             "arcs": [[-529, 659, -527, 660, -525, -466, -630, -123, -215, 661]],
             "id": "TCD",
-            "properties": { "name": "Chad" }
+            "properties": { "name": "Chad","color": "#FFD700"}
           },
           {
             "type": "Polygon",
             "arcs": [[662, -326, -73, -66]],
             "id": "TGO",
-            "properties": { "name": "Togo" }
+            "properties": { "name": "Togo","color": "yellow" }
           },
           {
             "type": "Polygon",
             "arcs": [[663, -518, 664, -489, -455, -442]],
             "id": "THA",
-            "properties": { "name": "Thailand" }
+            "properties": { "name": "Thailand","color": "MidnightBlue" }
           },
           {
             "type": "Polygon",
             "arcs": [[-440, -193, -3, 665]],
             "id": "TJK",
-            "properties": { "name": "Tajikistan" }
+            "properties": { "name": "Tajikistan","color": "ForestGreen" }
           },
           {
             "type": "Polygon",
             "arcs": [[-388, 666, -422, 667, -1]],
             "id": "TKM",
-            "properties": { "name": "Turkmenistan" }
+            "properties": { "name": "Turkmenistan","color": "green" }
           },
           {
             "type": "Polygon",
@@ -1221,13 +1221,13 @@
               ]
             ],
             "id": "UKR",
-            "properties": { "name": "Ukraine" }
+            "properties": { "name": "Ukraine","color": "yellow" }
           },
           {
             "type": "Polygon",
             "arcs": [[-114, 691, -28]],
             "id": "URY",
-            "properties": { "name": "Uruguay" }
+            "properties": { "name": "Uruguay","color": "white" }
           },
           {
             "type": "MultiPolygon",
@@ -1256,7 +1256,7 @@
             "type": "Polygon",
             "arcs": [[704, -349, -109, -234]],
             "id": "VEN",
-            "properties": { "name": "Venezuela" }
+            "properties": { "name": "Venezuela","color": "DarkBlue" }
           },
           {
             "type": "Polygon",
@@ -1280,7 +1280,7 @@
             "type": "Polygon",
             "arcs": [[708, -627, -542]],
             "id": "YEM",
-            "properties": { "name": "Yemen" }
+            "properties": { "name": "Yemen","color": "black" }
           },
           {
             "type": "Polygon",

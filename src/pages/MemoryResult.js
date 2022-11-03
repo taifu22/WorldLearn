@@ -32,7 +32,7 @@ function MemoryResult(props) {
     } 
 
     return (
-     <div className='memory-result' style={{maxHeight:'1000px'}}>
+     <div className='memory-result'>
         <h1>Voici les drapeaux que vous avez trouvé</h1>
             {arrayStates.length && arrayStates.map((item,index) => {
                 return(
